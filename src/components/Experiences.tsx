@@ -74,21 +74,15 @@ export const Experiences: React.FC<ExperiencesProps> = ({
 
         {/* Experience Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((experience, index) => {
+          {filtered.map((experience) => {
             return (
               <div
                 key={experience.id}
-                className={`group bg-paris-warm rounded-3xl overflow-hidden border border-paris-stone hover:border-paris-gold/40 transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-xl hover:-translate-y-1 ${
-                  index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
-                }`}
+                className="group bg-paris-warm rounded-3xl overflow-hidden border border-paris-stone hover:border-paris-gold/40 transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-xl hover:-translate-y-1"
               >
 
                 {/* Image Container */}
-                <div
-                  className={`relative overflow-hidden ${
-                    index === 0 ? 'h-72 sm:h-96' : 'h-64 sm:h-72'
-                  }`}
-                >
+                <div className="relative overflow-hidden h-64 sm:h-72">
                   <img
                     src={experience.image}
                     alt={experience.title}
@@ -130,25 +124,8 @@ export const Experiences: React.FC<ExperiencesProps> = ({
                     <p className="text-sm uppercase tracking-wider text-paris-gold-dark font-semibold mb-4">
                       {experience.tagline}
                     </p>
+                    
 
-                    <p className="font-sans text-base text-paris-charcoal/75 leading-relaxed mb-7">
-                      {experience.description}
-                    </p>
-
-                    {/* Highlights */}
-                    <div className="space-y-2 mb-7 pt-4 border-t border-paris-stone">
-                      {experience.highlights.slice(0, 2).map((highlight, hIdx) => (
-                        <div
-                          key={hIdx}
-                          className="flex items-start gap-2.5 text-sm text-paris-charcoal/70"
-                        >
-                          <span className="text-paris-gold font-bold text-base">
-                            •
-                          </span>
-                          <span>{highlight}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
                   {/* Card Footer */}

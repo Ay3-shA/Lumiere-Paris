@@ -52,7 +52,7 @@ export const WhyUs: React.FC = () => {
         </div>
 
         {/* Feature Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {WHY_US_FEATURES.map((feature) => (
             <div
               key={feature.id}

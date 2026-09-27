@@ -5,6 +5,8 @@ import nightSeine from '../assets/images/paris_night_seine_1790325792393.jpg';
 import louvreCulture from '../assets/images/paris_louvre_culture_1790325806974.jpg';
 import bistroCuisine from '../assets/images/paris_bistro_cuisine_1790325818085.jpg';
 import montmartreStreet from '../assets/images/paris_montmartre_street_1790325829547.jpg';
+import versaillesPalace from '../assets/images/paris_versailles_palace_1790505911054.png';
+
 
 export const PARIS_IMAGES = {
   heroEiffel,
@@ -137,6 +139,32 @@ export const EXPERIENCES_DATA: Experience[] = [
     bestTime: 'Morning or Afternoon',
     priceEstimate: 'From €160 / guest',
   },
+  {
+    id: 'royal-versailles',
+    title: 'Royal Versailles & Gardens',
+    category: 'Royal Heritage',
+    tagline: 'The golden Hall of Mirrors, Grand Fountains & Marie Antoinette’s estate',
+    description: "Step into the French royal court with private access to the Sun King's palace, musical fountain gardens, and the tranquil Queen’s Hamlet.",
+    fullDetails: "Journey just outside Paris in chauffeured comfort to the golden grandeur of the Château de Versailles. Walk through the sparkling Hall of Mirrors, visit the King’s Grand Apartments with a certified royal historian, stroll among Le Nôtre’s classical sculpted fountains, and explore Marie Antoinette’s pastoral Queen's Hamlet with a private electric golf cart and gourmet lunch.",
+    image: versaillesPalace,
+    duration: 'Full Day (6-7 Hours)',
+    groupSize: 'Private (1-6 guests)',
+    highlights: [
+      'Private morning access to the Hall of Mirrors & Royal Chapel',
+      'Grand Canal electric boat or golf cart exploration',
+      'Marie Antoinette’s Queen’s Hamlet & Petit Trianon retreat',
+      'Gourmet royal lunch at Ducasse restaurant inside the palace'
+    ],
+    inclusions: [
+      'Private round-trip Mercedes transfer from your Paris hotel',
+      'All-access Passport château & estate tickets with fast track',
+      'Accredited national palace lecturer & guide',
+      'Three-course French lunch paired with fine wines'
+    ],
+    bestTime: 'Tuesdays through Sundays (Fountain Shows)',
+    priceEstimate: 'From €260 / guest',
+  },
+
 ];
 
 export const DESTINATIONS_DATA: Destination[] = [
@@ -228,13 +256,7 @@ export const WHY_US_FEATURES = [
     details: "Our licensed guides and itinerary planners are born and raised in Paris or longtime residents with intimate access to private venues, chefs, and cultural curators.",
     stat: '15+ Years in Paris',
   },
-  {
-    id: 'tailored-experiences',
-    title: 'Tailored Experiences',
-    description: "Choose experiences that match your interests, schedule, and travel style.",
-    details: "Whether you crave romance, family-friendly adventures, Michelin-starred gastronomy, or hidden antique discoveries, every detail adapts to you.",
-    stat: '100% Customized',
-  },
+
   {
     id: 'easy-planning',
     title: 'Easy Planning',
