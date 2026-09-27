@@ -12,9 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
       id="home"
       className="relative h-screen flex items-center justify-center overflow-hidden bg-transparent text-white"
     >
-      {/* Subtle vignette over scroll animation */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-black/50 via-transparent to-black/30" />
-
+      
       {/* Main Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-20 text-center flex flex-col items-center">
         {/* Subtle Parisian Kicker */}

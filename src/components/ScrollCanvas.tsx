@@ -7,115 +7,120 @@ const images = [
 ];
 
 export const ScrollCanvas: React.FC = () => {
-  const layersRef = useRef<(HTMLImageElement | null)[]>([]);
+  const trackRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const updateBackground = () => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const update = () => {
       const maxScroll =
         document.documentElement.scrollHeight - window.innerHeight;
 
-      const progress =
-        maxScroll > 0
-          ? Math.min(Math.max(window.scrollY / maxScroll, 0), 1)
-          : 0;
+      if (maxScroll <= 0) return;
 
-      const airplane = layersRef.current[0];
-      const clouds = layersRef.current[1];
-      const eiffel = layersRef.current[2];
-
-      if (!airplane || !clouds || !eiffel) return;
-
-      // Airplane → Clouds → Eiffel Tower
-      const airplaneOpacity =
-        progress < 0.45
-          ? 1
-          : 1 - (progress - 0.45) / 0.2;
-
-      const cloudsOpacity =
-        progress < 0.25
-          ? 0
-          : progress < 0.55
-            ? (progress - 0.25) / 0.3
-            : progress < 0.75
-              ? 1 - (progress - 0.55) / 0.2
-              : 0;
-
-      const eiffelOpacity =
-        progress < 0.55
-          ? 0
-          : Math.min((progress - 0.55) / 0.25, 1);
-
-      airplane.style.opacity = String(
-        Math.max(0, airplaneOpacity)
+      const progress = Math.min(
+        Math.max(window.scrollY / maxScroll, 0),
+        1
       );
 
-      clouds.style.opacity = String(
-        Math.max(0, cloudsOpacity)
-      );
+      const y = progress * window.innerHeight * 2;
 
-      eiffel.style.opacity = String(
-        Math.max(0, eiffelOpacity)
-      );
-
-      // Very small synchronized movement with the page.
-      const y = -progress * 60;
-
-      [airplane, clouds, eiffel].forEach((image) => {
-        image.style.transform =
-          `translate3d(0, ${y}px, 0) scale(1.05)`;
-      });
+      track.style.transform = `translate3d(0, ${-y}px, 0)`;
     };
 
-    updateBackground();
+    update();
 
-    window.addEventListener(
-      'scroll',
-      updateBackground,
-      { passive: true }
-    );
-
-    window.addEventListener(
-      'resize',
-      updateBackground
-    );
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
 
     return () => {
-      window.removeEventListener(
-        'scroll',
-        updateBackground
-      );
-
-      window.removeEventListener(
-        'resize',
-        updateBackground
-      );
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
     };
   }, []);
 
   return (
     <div
-      className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
+      className="fixed inset-0 overflow-hidden pointer-events-none"
+      style={{
+        zIndex: 0,
+      }}
       aria-hidden="true"
     >
-      {images.map((src, index) => (
-        <img
-          key={src}
-          ref={(element) => {
-            layersRef.current[index] = element;
-          }}
-          src={src}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{
-            opacity: index === 0 ? 1 : 0,
-            transform:
-              'translate3d(0, 0, 0) scale(1.05)',
-            willChange: 'opacity, transform',
-          }}
-        />
-      ))}
+      <div
+        ref={trackRef}
+        className="absolute left-0 top-0 w-full"
+        style={{
+          height: '320vh',
+          willChange: 'transform',
+        }}
+      >
 
-      <div className="absolute inset-0 bg-black/10" />
+        {/* AIRPLANE */}
+        <div
+          className="absolute left-0 top-0 w-full"
+          style={{
+            height: '120vh',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, black 0%, black 75%, transparent 100%)',
+            maskImage:
+              'linear-gradient(to bottom, black 0%, black 75%, transparent 100%)',
+          }}
+        >
+          <img
+            src={images[0]}
+            alt=""
+            className="w-full h-full object-cover"
+            style={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </div>
+
+        {/* CLOUDS */}
+        <div
+          className="absolute left-0 top-[100vh] w-full"
+          style={{
+            height: '120vh',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',
+          }}
+        >
+          <img
+            src={images[1]}
+            alt=""
+            className="w-full h-full object-cover"
+            style={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </div>
+
+        {/* EIFFEL TOWER */}
+        <div
+          className="absolute left-0 top-[200vh] w-full"
+          style={{
+            height: '120vh',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 100%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 100%)',
+          }}
+        >
+          <img
+            src={images[2]}
+            alt=""
+            className="w-full h-full object-cover"
+            style={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </div>
+
+      </div>
     </div>
   );
 };

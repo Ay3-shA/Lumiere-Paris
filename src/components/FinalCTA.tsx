@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Calendar, Mail, Sparkles, PhoneCall, ArrowRight } from 'lucide-react';
 
@@ -6,14 +7,16 @@ interface FinalCTAProps {
   onContactUs: () => void;
 }
 
-export const FinalCTA: React.FC<FinalCTAProps> = ({ onStartPlanning, onContactUs }) => {
+export const FinalCTA: React.FC<FinalCTAProps> = ({
+  onStartPlanning,
+  onContactUs,
+}) => {
   return (
-    <section data-final-cta className="relative py-28 sm:py-36 overflow-hidden bg-transparent text-white">
-      {/* Subtle vignette over scroll animation */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/40" />
+    <section className="relative py-28 sm:py-36 overflow-hidden bg-transparent text-white">
 
       {/* Content Container */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center flex flex-col items-center">
+
         {/* Subtle Kicker */}
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E8D8C3] text-xs uppercase tracking-[0.2em] font-medium mb-6">
           <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
@@ -27,7 +30,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onStartPlanning, onContactUs
 
         {/* Text */}
         <p className="font-sans text-base sm:text-lg lg:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto mb-10 text-balance">
-          Your Paris adventure starts here. Choose your experiences, build your itinerary, and get ready to discover one of the world&apos;s most captivating cities.
+          Your Paris adventure starts here. Choose your experiences, build your itinerary, and get ready to discover one of the world's most captivating cities.
         </p>
 
         {/* Dual Call-to-Action Buttons */}
@@ -57,6 +60,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onStartPlanning, onContactUs
           <span>•</span>
           <span>Avg. Response Time &lt; 2 Hours</span>
         </div>
+
       </div>
     </section>
   );
