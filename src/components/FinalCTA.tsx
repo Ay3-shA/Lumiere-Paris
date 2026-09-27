@@ -8,7 +8,7 @@ interface FinalCTAProps {
 
 export const FinalCTA: React.FC<FinalCTAProps> = ({ onStartPlanning, onContactUs }) => {
   return (
-    <section className="relative py-28 sm:py-36 overflow-hidden bg-transparent text-white">
+    <section data-final-cta className="relative py-28 sm:py-36 overflow-hidden bg-transparent text-white">
       {/* Subtle vignette over scroll animation */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/40" />
 

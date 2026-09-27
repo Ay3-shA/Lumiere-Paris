@@ -61,7 +61,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-transparent text-[#1A1A1A] font-sans selection:bg-[#C5A880]/30 selection:text-[#1A1A1A]">
+    <div className="relative min-h-screen bg-transparent text-paris-charcoal font-sans selection:bg-paris-gold/30 selection:text-[#1A1A1A]">
       
       {/* Animated background synchronized to website scroll */}
       <ScrollCanvas />

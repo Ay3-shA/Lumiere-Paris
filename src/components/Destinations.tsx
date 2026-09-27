@@ -15,14 +15,14 @@ export const Destinations: React.FC<DestinationsProps> = ({
   return (
     <section
       id="destinations"
-      className="py-24 sm:py-32 bg-transparent text-white border-t border-white/10"
+      className="py-24 sm:py-32 bg-transparent text-white"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EFEAE1] border border-[#E5DFC5] text-[#9E7D52] text-sm uppercase tracking-[0.18em] font-medium mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paris-stone border border-[#E5DFC5] text-paris-gold-dark text-sm uppercase tracking-[0.18em] font-medium mb-5">
             <MapPin className="w-4 h-4" />
             <span>Quartiers & Neighborhoods</span>
           </div>
@@ -51,7 +51,7 @@ export const Destinations: React.FC<DestinationsProps> = ({
             <div
               key={dest.id}
               onClick={() => onSelectDestination(dest)}
-              className="group bg-[#FDFBF7] rounded-3xl overflow-hidden border border-[#EFEAE1] hover:border-[#C5A880]/50 transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between cursor-pointer"
+              className="group bg-paris-cream rounded-3xl overflow-hidden border border-[#EFEAE1] hover:border-[#C5A880]/50 transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between cursor-pointer"
             >
 
               {/* Card Image */}
@@ -89,14 +89,14 @@ export const Destinations: React.FC<DestinationsProps> = ({
               <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
 
                 <div>
-                  <p className="font-sans text-base text-[#1A1A1A]/75 leading-relaxed mb-6">
+                  <p className="font-sans text-base text-paris-charcoal/75 leading-relaxed mb-6">
                     {dest.shortDesc}
                   </p>
 
                   {/* Highlights */}
-                  <div className="space-y-2 mb-7 text-sm text-[#1A1A1A]/70 pt-3 border-t border-[#EFEAE1]">
+                  <div className="space-y-2 mb-7 text-sm text-paris-charcoal/70 pt-3 border-t border-paris-stone">
 
-                    <div className="font-semibold text-[#1A1A1A] mb-2">
+                    <div className="font-semibold text-paris-charcoal mb-2">
                       Local Highlights:
                     </div>
 
@@ -105,7 +105,7 @@ export const Destinations: React.FC<DestinationsProps> = ({
                         key={idx}
                         className="flex items-center gap-2 truncate"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-paris-gold shrink-0" />
                         <span className="truncate">{item}</span>
                       </div>
                     ))}
@@ -113,9 +113,9 @@ export const Destinations: React.FC<DestinationsProps> = ({
                 </div>
 
                 {/* Card Action */}
-                <div className="flex items-center justify-between pt-5 border-t border-[#EFEAE1] text-sm font-semibold text-[#1A1A1A] group-hover:text-[#9E7D52] transition-colors">
+                <div className="flex items-center justify-between pt-5 border-t border-paris-stone text-sm font-semibold text-[#1A1A1A] group-hover:text-[#9E7D52] transition-colors">
 
-                  <div className="flex items-center gap-2 text-[#1A1A1A]/60">
+                  <div className="flex items-center gap-2 text-paris-charcoal/60">
                     <Coffee className="w-4 h-4" />
                     <span>{dest.bestCafes[0]}</span>
                   </div>

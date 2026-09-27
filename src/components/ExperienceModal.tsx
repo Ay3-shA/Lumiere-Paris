@@ -34,36 +34,36 @@ export const ExperienceModal: React.FC<ExperienceModalProps> = ({
             alt={experience.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FDFBF7] via-black/30 to-black/50" />
+          <div className="absolute inset-0 bg-linear-to-t from-paris-cream via-black/30 to-black/50" />
 
           <div className="absolute bottom-4 left-6 sm:left-9 right-6 sm:right-9">
-            <span className="px-3 py-1 rounded-full bg-white/90 text-[#1A1A1A] text-[10px] uppercase font-bold tracking-wider inline-block mb-2">
+            <span className="px-3 py-1 rounded-full bg-white/90 text-paris-charcoal text-[10px] uppercase font-bold tracking-wider inline-block mb-2">
               {experience.category}
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#1A1A1A] tracking-tight">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-paris-charcoal tracking-tight">
               {experience.title}
             </h3>
           </div>
         </div>
 
         {/* Details Meta */}
-        <div className="flex flex-wrap items-center gap-4 py-3 border-y border-[#EFEAE1] text-xs text-[#1A1A1A]/70 mb-6">
+        <div className="flex flex-wrap items-center gap-4 py-3 border-y border-paris-stone text-xs text-paris-charcoal/70 mb-6">
           <div className="flex items-center gap-1.5">
-            <Clock className="w-4 h-4 text-[#9E7D52]" />
+            <Clock className="w-4 h-4 text-paris-gold-dark" />
             <span>Duration: <strong>{experience.duration}</strong></span>
           </div>
           <div>•</div>
           <div className="flex items-center gap-1.5">
-            <Users className="w-4 h-4 text-[#9E7D52]" />
+            <Users className="w-4 h-4 text-paris-gold-dark" />
             <span>Group Size: <strong>{experience.groupSize}</strong></span>
           </div>
           <div>•</div>
-          <div>Estimated: <strong className="text-[#1A1A1A]">{experience.priceEstimate}</strong></div>
+          <div>Estimated: <strong className="text-paris-charcoal">{experience.priceEstimate}</strong></div>
         </div>
 
         {/* Full Details Description */}
         <div className="space-y-4 mb-6">
-          <h4 className="font-serif text-xl font-bold text-[#1A1A1A]">
+          <h4 className="font-serif text-xl font-bold text-paris-charcoal">
             About This Experience
           </h4>
           <p className="text-sm text-[#1A1A1A]/80 leading-relaxed">

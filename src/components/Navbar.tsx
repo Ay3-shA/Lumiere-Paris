@@ -62,8 +62,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#EFEAE1] py-3.5 shadow-sm'
-            : 'bg-gradient-to-b from-black/60 via-black/30 to-transparent py-5'
+            ? 'bg-paris-cream/95 backdrop-blur-md border-b border-paris-stone py-3.5 shadow-sm'
+            : 'bg-linear-to-b from-black/60 via-black/30 to-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
@@ -79,14 +79,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
             <div className="flex flex-col">
               <span
                 className={`font-serif text-2xl sm:text-[26px] font-bold tracking-tight transition-colors ${
-                  isScrolled ? 'text-[#1A1A1A]' : 'text-white'
+                  isScrolled ? 'text-paris-charcoal' : 'text-white'
                 }`}
               >
                 Lumière Paris
               </span>
               <span
                 className={`text-[9px] uppercase tracking-[0.25em] font-sans font-medium -mt-1 transition-colors ${
-                  isScrolled ? 'text-[#C5A880]' : 'text-[#E8D8C3]'
+                  isScrolled ? 'text-paris-gold' : 'text-paris-gold-light'
                 }`}
               >
                 Voyages d&apos;Exception
@@ -101,16 +101,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
               className={`text-xs uppercase tracking-[0.14em] font-medium transition-colors relative py-1 cursor-pointer ${
                 isScrolled
                   ? activeSection === 'home'
-                    ? 'text-[#C5A880] font-semibold'
-                    : 'text-[#1A1A1A]/80 hover:text-[#1A1A1A]'
+                    ? 'text-paris-gold font-semibold'
+                    : 'text-paris-charcoal/80 hover:text-paris-charcoal'
                   : activeSection === 'home'
-                  ? 'text-[#E8D8C3] font-semibold'
+                  ? 'text-paris-gold-light font-semibold'
                   : 'text-white/90 hover:text-white'
               }`}
             >
               Home
               {activeSection === 'home' && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C5A880] rounded-full" />
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-paris-gold rounded-full" />
               )}
             </button>
 
@@ -119,16 +119,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
               className={`text-xs uppercase tracking-[0.14em] font-medium transition-colors relative py-1 cursor-pointer ${
                 isScrolled
                   ? activeSection === 'experiences'
-                    ? 'text-[#C5A880] font-semibold'
-                    : 'text-[#1A1A1A]/80 hover:text-[#1A1A1A]'
+                    ? 'text-paris-gold font-semibold'
+                    : 'text-paris-charcoal/80 hover:text-paris-charcoal'
                   : activeSection === 'experiences'
-                  ? 'text-[#E8D8C3] font-semibold'
+                  ? 'text-paris-gold-light font-semibold'
                   : 'text-white/90 hover:text-white'
               }`}
             >
               Experiences
               {activeSection === 'experiences' && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C5A880] rounded-full" />
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-paris-gold rounded-full" />
               )}
             </button>
 

@@ -1,184 +1,83 @@
 import React, { useEffect, useRef } from 'react';
 
-const TOTAL_FRAMES = 300;
-const FRAME_DIR = '/ezgif-12d5041b8f6a7806-jpg';
+const images = [
+  `${import.meta.env.BASE_URL}images/airplane-window.png`,
+  `${import.meta.env.BASE_URL}images/clouds.png`,
+  `${import.meta.env.BASE_URL}images/eiffel-tower.png`,
+];
 
 export const ScrollCanvas: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const track = trackRef.current;
+    if (!track) return;
 
-    const ctx = canvas.getContext('2d', { alpha: false });
-    if (!ctx) return;
+    let targetProgress = 0;
+    let currentProgress = 0;
+    let animationFrameId = 0;
 
-    const images: (HTMLImageElement | null)[] = new Array(TOTAL_FRAMES).fill(null);
-    let targetFrame = 0;
-    let currentFrame = 0;
-    let lastRenderedImg: HTMLImageElement | null = null;
-    let lastRenderedIndex = -1;
-    let animationFrameId: number;
-
-    const getFrameUrl = (index: number) => {
-      const paddedIndex = String(index).padStart(3, '0');
-      return `${FRAME_DIR}/ezgif-frame-${paddedIndex}.jpg`;
-    };
-
-    const drawFrame = (index: number) => {
-      if (!canvas || !ctx) return;
-
-      const roundedIndex = Math.min(
-        Math.max(Math.round(index), 0),
-        TOTAL_FRAMES - 1
-      );
-
-      let img = images[roundedIndex];
-
-      // If requested frame isn't loaded yet, find nearest loaded frame
-      if (!img || !img.complete || img.naturalWidth === 0) {
-        for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
-          const prev = images[roundedIndex - offset];
-
-          if (prev && prev.complete && prev.naturalWidth > 0) {
-            img = prev;
-            break;
-          }
-
-          const next = images[roundedIndex + offset];
-
-          if (next && next.complete && next.naturalWidth > 0) {
-            img = next;
-            break;
-          }
-        }
-      }
-
-      if (!img || !img.complete || img.naturalWidth === 0) return;
-
-      if (img === lastRenderedImg && roundedIndex === lastRenderedIndex) {
-        return;
-      }
-
-      const cw = canvas.width;
-      const ch = canvas.height;
-      const iw = img.naturalWidth;
-      const ih = img.naturalHeight;
-
-      // Cover canvas while preserving aspect ratio
-      const scale = Math.max(cw / iw, ch / ih);
-      const nw = iw * scale;
-      const nh = ih * scale;
-      const nx = (cw - nw) / 2;
-      const ny = (ch - nh) / 2;
-
-      ctx.drawImage(img, nx, ny, nw, nh);
-
-      lastRenderedImg = img;
-      lastRenderedIndex = roundedIndex;
-    };
-
-    const resizeCanvas = () => {
-      if (!canvas) return;
-
-      const dpr = window.devicePixelRatio || 1;
-
-      canvas.width = Math.round(window.innerWidth * dpr);
-      canvas.height = Math.round(window.innerHeight * dpr);
-
-      lastRenderedImg = null;
-      lastRenderedIndex = -1;
-
-      drawFrame(currentFrame);
-    };
-
-    // Connect animation to the ENTIRE website scroll
-    const updateScrollTarget = () => {
+    const updateTarget = () => {
       const maxScroll =
         document.documentElement.scrollHeight - window.innerHeight;
 
-      if (maxScroll <= 0) {
-        targetFrame = 0;
-        return;
-      }
-
-      const progress = Math.max(
-        0,
-        Math.min(1, window.scrollY / maxScroll)
-      );
-
-      targetFrame = progress * (TOTAL_FRAMES - 1);
+      targetProgress =
+        maxScroll > 0
+          ? Math.min(Math.max(window.scrollY / maxScroll, 0), 1)
+          : 0;
     };
 
-    // Smoothly move animation toward the target frame
     const animate = () => {
-      const ease = 0.12;
+      /*
+       * Smoothly follow the user's scroll.
+       */
+      currentProgress +=
+        (targetProgress - currentProgress) * 0.08;
 
-      currentFrame += (targetFrame - currentFrame) * ease;
+      /*
+       * The background contains three 120vh scenes.
+       * Each scene begins 100vh after the previous one,
+       * creating a 20vh overlap.
+       */
+      const totalMovement =
+        window.innerHeight * 2;
 
-      drawFrame(currentFrame);
+      const y =
+        currentProgress * totalMovement;
 
-      animationFrameId = requestAnimationFrame(animate);
+      track.style.transform =
+        `translate3d(0, ${-y}px, 0)`;
+
+      animationFrameId =
+        requestAnimationFrame(animate);
     };
-
-    // Load first frame immediately
-    const firstImg = new Image();
-
-    firstImg.src = getFrameUrl(1);
-
-    firstImg.onload = () => {
-      images[0] = firstImg;
-      drawFrame(0);
-    };
-
-    // Load keyframes every 10 frames
-    for (let i = 10; i < TOTAL_FRAMES; i += 10) {
-      const img = new Image();
-
-      img.src = getFrameUrl(i + 1);
-
-      img.onload = () => {
-        images[i] = img;
-
-        if (Math.abs(currentFrame - i) < 15) {
-          drawFrame(currentFrame);
-        }
-      };
-    }
-
-    // Load remaining frames
-    for (let i = 1; i < TOTAL_FRAMES; i++) {
-      if (images[i]) continue;
-
-      const img = new Image();
-
-      img.src = getFrameUrl(i + 1);
-
-      img.onload = () => {
-        images[i] = img;
-
-        if (Math.round(currentFrame) === i) {
-          drawFrame(currentFrame);
-        }
-      };
-    }
-
-    window.addEventListener('resize', resizeCanvas);
 
     window.addEventListener(
       'scroll',
-      updateScrollTarget,
+      updateTarget,
       { passive: true }
     );
 
-    resizeCanvas();
-    updateScrollTarget();
+    window.addEventListener(
+      'resize',
+      updateTarget
+    );
 
-    animationFrameId = requestAnimationFrame(animate);
+    updateTarget();
+
+    animationFrameId =
+      requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('scroll', updateScrollTarget);
+      window.removeEventListener(
+        'scroll',
+        updateTarget
+      );
+
+      window.removeEventListener(
+        'resize',
+        updateTarget
+      );
 
       cancelAnimationFrame(animationFrameId);
     };
@@ -186,21 +85,85 @@ export const ScrollCanvas: React.FC = () => {
 
   return (
     <div
-      className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden"
+      className="fixed inset-0 overflow-hidden pointer-events-none"
       style={{
         zIndex: 0,
       }}
       aria-hidden="true"
     >
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full block"
+      <div
+        ref={trackRef}
+        className="absolute left-0 top-0 w-full"
         style={{
-          width: '100vw',
-          height: '100vh',
-          display: 'block',
+          height: '320vh',
+          willChange: 'transform',
         }}
-      />
+      >
+
+        {/* AIRPLANE */}
+        <div
+          className="absolute left-0 top-0 w-full"
+          style={{
+            height: '120vh',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, black 0%, black 75%, transparent 100%)',
+            maskImage:
+              'linear-gradient(to bottom, black 0%, black 75%, transparent 100%)',
+          }}
+        >
+          <img
+            src={images[0]}
+            alt=""
+            className="w-full h-full object-cover"
+            style={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </div>
+
+        {/* CLOUDS */}
+        <div
+          className="absolute left-0 top-[100vh] w-full"
+          style={{
+            height: '120vh',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',
+          }}
+        >
+          <img
+            src={images[1]}
+            alt=""
+            className="w-full h-full object-cover"
+            style={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </div>
+
+        {/* EIFFEL TOWER */}
+        <div
+          className="absolute left-0 top-[200vh] w-full"
+          style={{
+            height: '120vh',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 100%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, black 25%, black 100%)',
+          }}
+        >
+          <img
+            src={images[2]}
+            alt=""
+            className="w-full h-full object-cover"
+            style={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </div>
+
+      </div>
     </div>
   );
 };
