@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
         </div>
 
         {/* Quick Social Proof & Trust Markers */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10 pt-8 border-t border-white/15 text-left w-full max-w-3xl">
+        <div className="flex flex-wrap justify-center gap-x-20 gap-y-10 pt-8 border-t border-white/15 text-center w-full max-w-3xl mx-auto">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
               <Star className="w-5 h-5 text-paris-gold fill-paris-gold" />
@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
               <Sparkles className="w-5 h-5 text-paris-gold" />
             </div>
@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
               <div className="text-base font-bold text-white tracking-tight">100% Tailored</div>
               <div className="text-xs text-white/60">Crafted to Your Travel Style</div>
             </div>
-          </div>
+          </div> */}
 
           <div className="col-span-2 md:col-span-1 flex items-center gap-3 justify-center md:justify-start">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
