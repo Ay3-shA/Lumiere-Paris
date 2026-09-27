@@ -54,3 +54,36 @@ main,
 main > section {
   background: transparent !important;
 }
+
+/* ===== LUMIERE PARIS BACKGROUND FIX ===== */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: #000 !important;
+  overflow-x: hidden;
+}
+
+/* Keep every main section transparent so the single
+   fixed travel background is visible everywhere. */
+main,
+main > section {
+  background: transparent !important;
+}
+
+/* Remove the navbar's separate background/band. */
+nav {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Prevent tiny image gaps/inline-image whitespace. */
+img {
+  display: block;
+}
