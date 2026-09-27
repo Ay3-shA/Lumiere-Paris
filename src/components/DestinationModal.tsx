@@ -20,7 +20,7 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-3xl bg-[#FDFBF7] rounded-3xl p-6 sm:p-9 text-[#1A1A1A] shadow-2xl border border-[#EFEAE1] max-h-[90vh] overflow-y-auto font-sans">
+      <div className="relative w-full max-w-3xl bg-paris-cream rounded-3xl p-6 sm:p-9 text-paris-charcoal shadow-2xl border border-paris-stone max-h-[90vh] overflow-y-auto font-sans">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -37,31 +37,31 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
             alt={destination.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FDFBF7] via-black/30 to-black/50" />
+          <div className="absolute inset-0 bg-linear-to-t from-paris-cream via-black/30 to-black/50" />
 
           <div className="absolute bottom-4 left-6 sm:left-9 right-6 sm:right-9">
-            <span className="px-3 py-1 rounded-full bg-white/90 text-[#1A1A1A] text-[10px] uppercase font-bold tracking-wider inline-block mb-2">
+            <span className="px-3 py-1 rounded-full bg-white/90 text-paris-charcoal text-[10px] uppercase font-bold tracking-wider inline-block mb-2">
               {destination.arrondissement}
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#1A1A1A] tracking-tight">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-paris-charcoal tracking-tight">
               {destination.name}
             </h3>
-            <p className="text-xs text-[#9E7D52] font-semibold uppercase tracking-wider">
+            <p className="text-xs text-paris-gold-dark font-semibold uppercase tracking-wider">
               {destination.atmosphere}
             </p>
           </div>
         </div>
 
         {/* District Selector Tabs */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-3 mb-6 border-b border-[#EFEAE1]">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-3 mb-6 border-b border-paris-stone">
           {DESTINATIONS_DATA.map((d) => (
             <button
               key={d.id}
               onClick={() => onSelectDestination(d)}
               className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
                 d.id === destination.id
-                  ? 'bg-[#1A1A1A] text-white'
-                  : 'bg-[#F7F4EE] text-[#1A1A1A]/70 hover:bg-[#EFEAE1]'
+                  ? 'bg-paris-charcoal text-white'
+                  : 'bg-paris-warm text-paris-charcoal/70 hover:bg-paris-stone'
               }`}
             >
               {d.name}
@@ -71,10 +71,10 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
 
         {/* Long Narrative Description */}
         <div className="space-y-4 mb-6">
-          <h4 className="font-serif text-xl font-bold text-[#1A1A1A]">
+          <h4 className="font-serif text-xl font-bold text-paris-charcoal">
             Quartier Story &amp; Atmosphere
           </h4>
-          <p className="text-sm text-[#1A1A1A]/80 leading-relaxed">
+          <p className="text-sm text-paris-charcoal/80 leading-relaxed">
             {destination.longDesc}
           </p>
         </div>
@@ -82,15 +82,15 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
         {/* Two-Column Grid: Highlights & Favorite Cafes */}
         <div className="grid sm:grid-cols-2 gap-6 mb-8">
           {/* Highlights */}
-          <div className="p-5 rounded-2xl bg-[#F7F4EE] border border-[#EFEAE1]">
-            <h5 className="text-xs uppercase tracking-wider font-bold text-[#9E7D52] mb-3 flex items-center gap-1.5">
+          <div className="p-5 rounded-2xl bg-paris-warm border border-paris-stone">
+            <h5 className="text-xs uppercase tracking-wider font-bold text-paris-gold-dark mb-3 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Must-Visit Landmarks</span>
             </h5>
             <div className="space-y-2">
               {destination.highlights.map((h, i) => (
-                <div key={i} className="flex items-start gap-2 text-xs text-[#1A1A1A]/80">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880] mt-1.5 shrink-0" />
+                <div key={i} className="flex items-start gap-2 text-xs text-paris-charcoal/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-paris-gold mt-1.5 shrink-0" />
                   <span>{h}</span>
                 </div>
               ))}
@@ -98,30 +98,30 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
           </div>
 
           {/* Best Cafes & Bistros */}
-          <div className="p-5 rounded-2xl bg-[#F7F4EE] border border-[#EFEAE1]">
-            <h5 className="text-xs uppercase tracking-wider font-bold text-[#9E7D52] mb-3 flex items-center gap-1.5">
+          <div className="p-5 rounded-2xl bg-paris-warm border border-paris-stone">
+            <h5 className="text-xs uppercase tracking-wider font-bold text-paris-gold-dark mb-3 flex items-center gap-1.5">
               <Coffee className="w-3.5 h-3.5" />
               <span>Beloved Cafés &amp; Bistros</span>
             </h5>
             <div className="space-y-2">
               {destination.bestCafes.map((c, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs text-[#1A1A1A]/80">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B82] shrink-0" />
+                <div key={i} className="flex items-center gap-2 text-xs text-paris-charcoal/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-paris-blue shrink-0" />
                   <span>{c}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-4 pt-3 border-t border-[#EFEAE1] text-[11px] text-[#1A1A1A]/60">
+            <div className="mt-4 pt-3 border-t border-paris-stone text-[11px] text-paris-charcoal/60">
               Recommended walking exploration: <strong>{destination.walkingTime}</strong>
             </div>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#EFEAE1]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-paris-stone">
           <div>
-            <span className="text-[11px] text-[#1A1A1A]/60 block">Want to explore {destination.name} with a private local guide?</span>
-            <span className="text-xs font-semibold text-[#1A1A1A]">Included in all customized Lumière Paris itineraries</span>
+            <span className="text-[11px] text-paris-charcoal/60 block">Want to explore {destination.name} with a private local guide?</span>
+            <span className="text-xs font-semibold text-paris-charcoal">Included in all customized Lumière Paris itineraries</span>
           </div>
 
           <button
@@ -129,7 +129,7 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
               onClose();
               onPlanNeighborhoodTrip(destination.id);
             }}
-            className="w-full sm:w-auto px-7 py-3 rounded-full bg-[#1A1A1A] text-white hover:bg-[#C5A880] hover:text-[#1A1A1A] transition-colors text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
+            className="w-full sm:w-auto px-7 py-3 rounded-full bg-paris-charcoal text-white hover:bg-paris-gold hover:text-paris-charcoal transition-colors text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
           >
             <Compass className="w-4 h-4" />
             <span>Include in My Trip Plan</span>

@@ -51,7 +51,7 @@ export const Destinations: React.FC<DestinationsProps> = ({
             <div
               key={dest.id}
               onClick={() => onSelectDestination(dest)}
-              className="group bg-paris-cream rounded-3xl overflow-hidden border border-[#EFEAE1] hover:border-[#C5A880]/50 transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between cursor-pointer"
+              className="group bg-paris-cream rounded-3xl overflow-hidden border border-paris-stone hover:border-paris-gold/50 transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between cursor-pointer"
             >
 
               {/* Card Image */}
@@ -63,11 +63,11 @@ export const Destinations: React.FC<DestinationsProps> = ({
                   referrerPolicy="no-referrer"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
 
                 {/* Arrondissement Tag */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[#1A1A1A] text-xs font-semibold tracking-wider uppercase shadow-xs">
+                  <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-paris-charcoal text-xs font-semibold tracking-wider uppercase shadow-xs">
                     {dest.arrondissement}
                   </span>
                 </div>
@@ -75,7 +75,7 @@ export const Destinations: React.FC<DestinationsProps> = ({
                 {/* Bottom Overlay Label */}
                 <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
 
-                  <span className="text-xs uppercase tracking-widest text-[#E8D8C3] font-medium block mb-1">
+                  <span className="text-xs uppercase tracking-widest text-paris-gold-light font-medium block mb-1">
                     {dest.atmosphere}
                   </span>
 
@@ -113,7 +113,7 @@ export const Destinations: React.FC<DestinationsProps> = ({
                 </div>
 
                 {/* Card Action */}
-                <div className="flex items-center justify-between pt-5 border-t border-paris-stone text-sm font-semibold text-[#1A1A1A] group-hover:text-[#9E7D52] transition-colors">
+                <div className="flex items-center justify-between pt-5 border-t border-paris-stone text-sm font-semibold text-paris-charcoal group-hover:text-paris-gold-dark transition-colors">
 
                   <div className="flex items-center gap-2 text-paris-charcoal/60">
                     <Coffee className="w-4 h-4" />
@@ -135,9 +135,9 @@ export const Destinations: React.FC<DestinationsProps> = ({
         <div className="text-center">
           <button
             onClick={onExploreAll}
-            className="px-9 py-4 rounded-full bg-[#1A1A1A] text-white hover:bg-[#C5A880] hover:text-[#1A1A1A] transition-all duration-300 text-sm sm:text-base font-semibold uppercase tracking-wider shadow-md hover:shadow-lg active:scale-95 cursor-pointer inline-flex items-center gap-3"
+            className="px-9 py-4 rounded-full bg-paris-charcoal text-white hover:bg-paris-gold hover:text-paris-charcoal transition-all duration-300 text-sm sm:text-base font-semibold uppercase tracking-wider shadow-md hover:shadow-lg active:scale-95 cursor-pointer inline-flex items-center gap-3"
           >
-            <Compass className="w-5 h-5 text-[#C5A880]" />
+            <Compass className="w-5 h-5 text-paris-gold" />
             <span>Explore Destinations</span>
           </button>
         </div>

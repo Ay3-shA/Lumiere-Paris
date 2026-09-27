@@ -16,8 +16,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
       {/* Main Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-20 text-center flex flex-col items-center">
         {/* Subtle Parisian Kicker */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E8D8C3] text-xs uppercase tracking-[0.2em] font-medium mb-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-paris-gold-light text-xs uppercase tracking-[0.2em] font-medium mb-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
+          <Sparkles className="w-3.5 h-3.5 text-paris-gold" />
           <span>Curated Parisian Journeys</span>
         </div>
 
@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
         </h1>
 
         {/* Subheadline */}
-        <p className="font-serif italic text-lg sm:text-2xl lg:text-[26px] text-[#E8D8C3] font-normal tracking-wide max-w-3xl mb-4 text-balance">
+        <p className="font-serif italic text-lg sm:text-2xl lg:text-[26px] text-paris-gold-light font-normal tracking-wide max-w-3xl mb-4 text-balance">
           &ldquo;Experience the timeless beauty, culture, cuisine, and unforgettable moments of Paris.&rdquo;
         </p>
 
@@ -40,9 +40,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto mb-14">
           <button
             onClick={onExploreClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-[#1A1A1A] font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#E8D8C3] active:scale-95 transition-all duration-200 shadow-xl cursor-pointer flex items-center justify-center gap-2.5"
+            className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-paris-charcoal font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-paris-gold-light active:scale-95 transition-all duration-200 shadow-xl cursor-pointer flex items-center justify-center gap-2.5"
           >
-            <Compass className="w-4 h-4 text-[#C5A880]" />
+            <Compass className="w-4 h-4 text-paris-gold" />
             <span>Explore Paris</span>
           </button>
 
@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10 pt-8 border-t border-white/15 text-left w-full max-w-3xl">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <Star className="w-5 h-5 text-[#C5A880] fill-[#C5A880]" />
+              <Star className="w-5 h-5 text-paris-gold fill-paris-gold" />
             </div>
             <div>
               <div className="text-base font-bold text-white tracking-tight">4.9 / 5 Rating</div>
@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
 
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <Sparkles className="w-5 h-5 text-[#C5A880]" />
+              <Sparkles className="w-5 h-5 text-paris-gold" />
             </div>
             <div>
               <div className="text-base font-bold text-white tracking-tight">100% Tailored</div>
@@ -79,7 +79,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
 
           <div className="col-span-2 md:col-span-1 flex items-center gap-3 justify-center md:justify-start">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5 text-[#C5A880]" />
+              <ShieldCheck className="w-5 h-5 text-paris-gold" />
             </div>
             <div>
               <div className="text-base font-bold text-white tracking-tight">Paris Born & Based</div>

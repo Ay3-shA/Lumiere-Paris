@@ -17,7 +17,7 @@ export const ExperienceModal: React.FC<ExperienceModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-[#FDFBF7] rounded-3xl p-6 sm:p-9 text-[#1A1A1A] shadow-2xl border border-[#EFEAE1] max-h-[90vh] overflow-y-auto font-sans">
+      <div className="relative w-full max-w-2xl bg-paris-cream rounded-3xl p-6 sm:p-9 text-paris-charcoal shadow-2xl border border-paris-stone max-h-[90vh] overflow-y-auto font-sans">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -66,20 +66,20 @@ export const ExperienceModal: React.FC<ExperienceModalProps> = ({
           <h4 className="font-serif text-xl font-bold text-paris-charcoal">
             About This Experience
           </h4>
-          <p className="text-sm text-[#1A1A1A]/80 leading-relaxed">
+          <p className="text-sm text-paris-charcoal/80 leading-relaxed">
             {experience.fullDetails}
           </p>
         </div>
 
         {/* Highlights */}
         <div className="space-y-3 mb-6">
-          <h4 className="text-xs uppercase tracking-wider font-bold text-[#9E7D52]">
+          <h4 className="text-xs uppercase tracking-wider font-bold text-paris-gold-dark">
             Key Highlights
           </h4>
           <div className="grid sm:grid-cols-2 gap-2.5">
             {experience.highlights.map((h, i) => (
-              <div key={i} className="flex items-start gap-2 text-xs text-[#1A1A1A]/80 bg-[#F7F4EE] p-3 rounded-xl border border-[#EFEAE1]">
-                <Sparkles className="w-3.5 h-3.5 text-[#C5A880] shrink-0 mt-0.5" />
+              <div key={i} className="flex items-start gap-2 text-xs text-paris-charcoal/80 bg-paris-warm p-3 rounded-xl border border-paris-stone">
+                <Sparkles className="w-3.5 h-3.5 text-paris-gold shrink-0 mt-0.5" />
                 <span>{h}</span>
               </div>
             ))}
@@ -88,13 +88,13 @@ export const ExperienceModal: React.FC<ExperienceModalProps> = ({
 
         {/* Inclusions */}
         <div className="space-y-3 mb-8">
-          <h4 className="text-xs uppercase tracking-wider font-bold text-[#9E7D52]">
+          <h4 className="text-xs uppercase tracking-wider font-bold text-paris-gold-dark">
             What&apos;s Included
           </h4>
           <div className="space-y-2">
             {experience.inclusions.map((inc, i) => (
-              <div key={i} className="flex items-center gap-2 text-xs text-[#1A1A1A]/80">
-                <Check className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+              <div key={i} className="flex items-center gap-2 text-xs text-paris-charcoal/80">
+                <Check className="w-3.5 h-3.5 text-paris-gold shrink-0" />
                 <span>{inc}</span>
               </div>
             ))}
@@ -102,10 +102,10 @@ export const ExperienceModal: React.FC<ExperienceModalProps> = ({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#EFEAE1]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-paris-stone">
           <div>
-            <span className="text-[11px] text-[#1A1A1A]/60 block">Ready to experience this?</span>
-            <span className="text-xs font-semibold text-[#1A1A1A]">Can be combined with other Parisian highlights</span>
+            <span className="text-[11px] text-paris-charcoal/60 block">Ready to experience this?</span>
+            <span className="text-xs font-semibold text-paris-charcoal">Can be combined with other Parisian highlights</span>
           </div>
 
           <button
@@ -113,7 +113,7 @@ export const ExperienceModal: React.FC<ExperienceModalProps> = ({
               onClose();
               onBookExperience(experience.id);
             }}
-            className="w-full sm:w-auto px-7 py-3 rounded-full bg-[#1A1A1A] text-white hover:bg-[#C5A880] hover:text-[#1A1A1A] transition-colors text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
+            className="w-full sm:w-auto px-7 py-3 rounded-full bg-paris-charcoal text-white hover:bg-paris-gold hover:text-paris-charcoal transition-colors text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
           >
             <Calendar className="w-4 h-4" />
             <span>Add to Custom Trip</span>

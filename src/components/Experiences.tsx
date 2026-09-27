@@ -40,7 +40,7 @@ export const Experiences: React.FC<ExperiencesProps> = ({
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F7F4EE] border border-[#EFEAE1] text-[#9E7D52] text-sm uppercase tracking-[0.18em] font-medium mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paris-warm border border-paris-stone text-paris-gold-dark text-sm uppercase tracking-[0.18em] font-medium mb-5">
             <Sparkles className="w-4 h-4" />
             <span>Curated Activities</span>
           </div>
@@ -62,8 +62,8 @@ export const Experiences: React.FC<ExperiencesProps> = ({
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2.5 rounded-full text-sm font-medium tracking-wide transition-all duration-200 cursor-pointer ${
                   selectedCategory === cat
-                    ? 'bg-[#1A1A1A] text-white shadow-sm'
-                    : 'bg-[#F7F4EE] text-[#1A1A1A]/70 hover:text-[#1A1A1A] hover:bg-[#EFEAE1]'
+                    ? 'bg-paris-charcoal text-white shadow-sm'
+                    : 'bg-paris-warm text-paris-charcoal/70 hover:text-paris-charcoal hover:bg-paris-stone'
                 }`}
               >
                 {cat}
@@ -78,7 +78,7 @@ export const Experiences: React.FC<ExperiencesProps> = ({
             return (
               <div
                 key={experience.id}
-                className={`group bg-[#F7F4EE] rounded-3xl overflow-hidden border border-[#EFEAE1] hover:border-[#C5A880]/40 transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-xl hover:-translate-y-1 ${
+                className={`group bg-paris-warm rounded-3xl overflow-hidden border border-paris-stone hover:border-paris-gold/40 transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-xl hover:-translate-y-1 ${
                   index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
                 }`}
               >
@@ -96,11 +96,11 @@ export const Experiences: React.FC<ExperiencesProps> = ({
                     referrerPolicy="no-referrer"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent" />
 
                   {/* Category */}
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[#1A1A1A] text-xs font-semibold tracking-wider uppercase shadow-xs">
+                    <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-paris-charcoal text-xs font-semibold tracking-wider uppercase shadow-xs">
                       {experience.category}
                     </span>
                   </div>
@@ -108,12 +108,12 @@ export const Experiences: React.FC<ExperiencesProps> = ({
                   {/* Duration / Rating */}
                   <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white text-sm">
                     <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full">
-                      <Clock className="w-4 h-4 text-[#E8D8C3]" />
+                      <Clock className="w-4 h-4 text-paris-gold-light" />
                       <span>{experience.duration}</span>
                     </div>
 
                     <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full">
-                      <Star className="w-4 h-4 text-[#C5A880] fill-[#C5A880]" />
+                      <Star className="w-4 h-4 text-paris-gold fill-paris-gold" />
                       <span>4.9</span>
                     </div>
                   </div>
@@ -123,26 +123,26 @@ export const Experiences: React.FC<ExperiencesProps> = ({
                 <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
                   <div>
 
-                    <h3 className="font-serif text-2xl sm:text-[29px] font-bold text-[#1A1A1A] mb-3 tracking-tight group-hover:text-[#9E7D52] transition-colors">
+                    <h3 className="font-serif text-2xl sm:text-[29px] font-bold text-paris-charcoal mb-3 tracking-tight group-hover:text-paris-gold-dark transition-colors">
                       {experience.title}
                     </h3>
 
-                    <p className="text-sm uppercase tracking-wider text-[#9E7D52] font-semibold mb-4">
+                    <p className="text-sm uppercase tracking-wider text-paris-gold-dark font-semibold mb-4">
                       {experience.tagline}
                     </p>
 
-                    <p className="font-sans text-base text-[#1A1A1A]/75 leading-relaxed mb-7">
+                    <p className="font-sans text-base text-paris-charcoal/75 leading-relaxed mb-7">
                       {experience.description}
                     </p>
 
                     {/* Highlights */}
-                    <div className="space-y-2 mb-7 pt-4 border-t border-[#EFEAE1]">
+                    <div className="space-y-2 mb-7 pt-4 border-t border-paris-stone">
                       {experience.highlights.slice(0, 2).map((highlight, hIdx) => (
                         <div
                           key={hIdx}
-                          className="flex items-start gap-2.5 text-sm text-[#1A1A1A]/70"
+                          className="flex items-start gap-2.5 text-sm text-paris-charcoal/70"
                         >
-                          <span className="text-[#C5A880] font-bold text-base">
+                          <span className="text-paris-gold font-bold text-base">
                             •
                           </span>
                           <span>{highlight}</span>
@@ -152,19 +152,19 @@ export const Experiences: React.FC<ExperiencesProps> = ({
                   </div>
 
                   {/* Card Footer */}
-                  <div className="flex items-center justify-between pt-5 border-t border-[#EFEAE1]">
+                  <div className="flex items-center justify-between pt-5 border-t border-paris-stone">
                     <div>
-                      <span className="text-xs text-[#1A1A1A]/50 block mb-1">
+                      <span className="text-xs text-paris-charcoal/50 block mb-1">
                         Pricing
                       </span>
-                      <span className="text-sm font-semibold text-[#1A1A1A]">
+                      <span className="text-sm font-semibold text-paris-charcoal">
                         {experience.priceEstimate}
                       </span>
                     </div>
 
                     <button
                       onClick={() => onSelectExperience(experience)}
-                      className="px-5 py-3 rounded-full bg-[#1A1A1A] text-white hover:bg-[#C5A880] hover:text-[#1A1A1A] transition-all duration-200 text-sm font-semibold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-xs active:scale-95"
+                      className="px-5 py-3 rounded-full bg-paris-charcoal text-white hover:bg-paris-gold hover:text-paris-charcoal transition-all duration-200 text-sm font-semibold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-xs active:scale-95"
                     >
                       <span>Discover More</span>
                       <ArrowRight className="w-4 h-4" />
@@ -177,14 +177,14 @@ export const Experiences: React.FC<ExperiencesProps> = ({
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-16 p-8 sm:p-10 rounded-3xl bg-[#F0F4F8] border border-[#D5E1EA] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div className="mt-16 p-8 sm:p-10 rounded-3xl bg-paris-blue-light border border-[#D5E1EA] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
 
           <div>
-            <h4 className="font-serif text-2xl sm:text-3xl font-bold text-[#1A1A1A] mb-2">
+            <h4 className="font-serif text-2xl sm:text-3xl font-bold text-paris-charcoal mb-2">
               Looking for a custom combination of experiences?
             </h4>
 
-            <p className="text-base text-[#4A6B82] max-w-xl leading-relaxed">
+            <p className="text-base text-paris-blue max-w-xl leading-relaxed">
               Tell our Parisian concierges what inspires you, and we’ll weave
               these into a seamless, day-by-day bespoke journey.
             </p>
@@ -192,7 +192,7 @@ export const Experiences: React.FC<ExperiencesProps> = ({
 
           <button
             onClick={onPlanTripClick}
-            className="px-7 py-4 rounded-full bg-[#4A6B82] text-white hover:bg-[#385265] transition-colors text-sm font-semibold uppercase tracking-wider shrink-0 cursor-pointer shadow-sm"
+            className="px-7 py-4 rounded-full bg-paris-blue text-white hover:bg-[#385265] transition-colors text-sm font-semibold uppercase tracking-wider shrink-0 cursor-pointer shadow-sm"
           >
             Build Custom Itinerary
           </button>

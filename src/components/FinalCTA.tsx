@@ -18,8 +18,8 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
       <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center flex flex-col items-center">
 
         {/* Subtle Kicker */}
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E8D8C3] text-xs uppercase tracking-[0.2em] font-medium mb-6">
-          <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-paris-gold-light text-xs uppercase tracking-[0.2em] font-medium mb-6">
+          <Sparkles className="w-3.5 h-3.5 text-paris-gold" />
           <span>Begin Your Journey</span>
         </div>
 
@@ -37,9 +37,9 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto">
           <button
             onClick={onStartPlanning}
-            className="w-full sm:w-auto px-9 py-4 rounded-full bg-white text-[#1A1A1A] font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#E8D8C3] active:scale-95 transition-all duration-200 shadow-2xl cursor-pointer flex items-center justify-center gap-2.5"
+            className="w-full sm:w-auto px-9 py-4 rounded-full bg-white text-paris-charcoal font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-paris-gold-light active:scale-95 transition-all duration-200 shadow-2xl cursor-pointer flex items-center justify-center gap-2.5"
           >
-            <Calendar className="w-4 h-4 text-[#C5A880]" />
+            <Calendar className="w-4 h-4 text-paris-gold" />
             <span>Start Planning Your Trip</span>
           </button>
 
