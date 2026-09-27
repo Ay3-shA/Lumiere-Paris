@@ -93,23 +93,7 @@ export const Destinations: React.FC<DestinationsProps> = ({
                     {dest.shortDesc}
                   </p>
 
-                  {/* Highlights */}
-                  <div className="space-y-2 mb-7 text-sm text-paris-charcoal/70 pt-3 border-t border-paris-stone">
 
-                    <div className="font-semibold text-paris-charcoal mb-2">
-                      Local Highlights:
-                    </div>
-
-                    {dest.highlights.slice(0, 2).map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-2 truncate"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-paris-gold shrink-0" />
-                        <span className="truncate">{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Card Action */}
