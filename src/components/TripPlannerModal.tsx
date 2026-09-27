@@ -18,20 +18,13 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
 
   // Form State
-  const [travelDates, setTravelDates] = useState('2026-06-15');
-  const [duration, setDuration] = useState('4-5 Days');
-  const [partySize, setPartySize] = useState('Couple (2 Adults)');
-  const [travelStyle, setTravelStyle] = useState<string[]>([
-    'Romantic & Scenic',
-    'Gastronomy & Wine',
-  ]);
-  const [selectedNeighborhoods, setSelectedNeighborhoods] = useState<string[]>(
-    preselectedDestinationId ? [preselectedDestinationId] : ['montmartre', 'saint-germain-des-pres', 'le-marais']
-  );
-  const [selectedExperiences, setSelectedExperiences] = useState<string[]>(
-    preselectedExperienceId ? [preselectedExperienceId] : ['iconic-paris', 'paris-by-night']
-  );
-  const [budgetTier, setBudgetTier] = useState<'comfort' | 'premium' | 'luxury'>('premium');
+  const [travelDates, setTravelDates] = useState('');
+  const [duration, setDuration] = useState('');
+  const [partySize, setPartySize] = useState('');
+  const [travelStyle, setTravelStyle] = useState<string[]>([]);
+  const [selectedNeighborhoods, setSelectedNeighborhoods] = useState<string[]>([]);
+  const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
+  const [budgetTier, setBudgetTier] = useState<'comfort' | 'premium' | 'luxury' | ''>('');
 
   // Contact State
   const [fullName, setFullName] = useState('');
@@ -304,7 +297,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="p-4 rounded-2xl bg-[#F0F4F8] border border-[#D5E1EA] text-xs text-[#1A1A1A] space-y-1">
                   <div className="font-bold text-[#4A6B82] uppercase tracking-wider">Itinerary Summary:</div>
-                  <div>Duration: <strong>{duration}</strong> starting around <strong>{travelDates}</strong> for <strong>{partySize}</strong></div>
+                  <div>Duration: <strong>{duration}</strong></div>
                   <div>Selected Experiences: <strong>{selectedExperiences.length} chosen</strong></div>
                   <div>Quartiers of Interest: <strong>{selectedNeighborhoods.length} neighborhoods</strong></div>
                 </div>

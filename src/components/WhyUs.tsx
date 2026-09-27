@@ -90,6 +90,10 @@ export const WhyUs: React.FC = () => {
           ))}
         </div>
 
+        <h2 className="font-serif text-2xl sm:text-3xl lg:text-[36px] font-bold text-white tracking-tight leading-tight mb-8 text-center">
+            What Our Guests Say
+        </h2>
+
         {/* Guest Voices */}
         <div className="p-8 sm:p-12 rounded-3xl bg-[#1A1A1A] text-white relative overflow-hidden">
 
