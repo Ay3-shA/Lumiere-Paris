@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
                 Lumière Paris
               </span>
               <span
-                className={`text-[9px] uppercase tracking-[0.25em] font-sans font-medium -mt-1 transition-colors ${
+                className={`text-[10px] uppercase tracking-[0.25em] font-sans font-medium -mt-1 transition-colors ${
                   isScrolled ? 'text-paris-gold' : 'text-paris-gold-light'
                 }`}
               >
@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
           <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('home')}
-              className={`text-xs uppercase tracking-[0.14em] font-medium transition-colors relative py-1 cursor-pointer ${
+              className={`text-sm font-bold uppercase tracking-[0.14em] transition-colors relative py-1 cursor-pointer ${
                 isScrolled
                   ? activeSection === 'home'
                     ? 'text-paris-gold font-semibold'
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
 
             <button
               onClick={() => scrollToSection('experiences')}
-              className={`text-xs uppercase tracking-[0.14em] font-medium transition-colors relative py-1 cursor-pointer ${
+              className={`text-sm font-bold uppercase tracking-[0.14em] transition-colors relative py-1 cursor-pointer ${
                 isScrolled
                   ? activeSection === 'experiences'
                     ? 'text-paris-gold font-semibold'
@@ -134,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
 
             <button
               onClick={() => scrollToSection('destinations')}
-              className={`text-xs uppercase tracking-[0.14em] font-medium transition-colors relative py-1 cursor-pointer ${
+              className={`text-sm font-bold uppercase tracking-[0.14em] transition-colors relative py-1 cursor-pointer ${
                 isScrolled
                   ? activeSection === 'destinations'
                     ? 'text-paris-gold font-semibold'
@@ -152,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
 
             <button
               onClick={() => scrollToSection('why-us')}
-              className={`text-xs uppercase tracking-[0.14em] font-medium transition-colors relative py-1 cursor-pointer ${
+              className={`text-sm font-bold uppercase tracking-[0.14em] transition-colors relative py-1 cursor-pointer ${
                 isScrolled
                   ? activeSection === 'why-us'
                     ? 'text-paris-gold font-semibold'
@@ -172,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
               onClick={() => {
                 onOpenContact();
               }}
-              className={`text-xs uppercase tracking-[0.14em] font-medium transition-colors relative py-1 cursor-pointer ${
+              className={`text-sm font-bold uppercase tracking-[0.14em] transition-colors relative py-1 cursor-pointer ${
                 isScrolled
                   ? 'text-paris-charcoal/80 hover:text-paris-charcoal'
                   : 'text-white/90 hover:text-white'

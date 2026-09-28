@@ -24,7 +24,7 @@ export const Destinations: React.FC<DestinationsProps> = ({
 
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paris-stone border border-[#E5DFC5] text-paris-gold-dark text-sm uppercase tracking-[0.18em] font-medium mb-5">
             <MapPin className="w-4 h-4" />
-            <span>Quartiers & Neighborhoods</span>
+            <span>Destinations</span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-bold text-white tracking-tight leading-tight mb-5 text-balance">

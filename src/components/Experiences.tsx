@@ -42,7 +42,7 @@ export const Experiences: React.FC<ExperiencesProps> = ({
 
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paris-warm border border-paris-stone text-paris-gold-dark text-sm uppercase tracking-[0.18em] font-medium mb-5">
             <Sparkles className="w-4 h-4" />
-            <span>Curated Activities</span>
+            <span>Experiences</span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-tight mb-5">

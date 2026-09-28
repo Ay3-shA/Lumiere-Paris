@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
         {/* Subtle Parisian Kicker */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-paris-gold-light text-xs uppercase tracking-[0.2em] font-medium mb-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
           <Sparkles className="w-3.5 h-3.5 text-paris-gold" />
-          <span>Curated Parisian Journeys</span>
+          <span>Home</span>
         </div>
 
         {/* Headline */}

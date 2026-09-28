@@ -6,11 +6,12 @@ import { Experiences } from './components/Experiences';
 import { Destinations } from './components/Destinations';
 import { WhyUs } from './components/WhyUs';
 import { FinalCTA } from './components/FinalCTA';
+import { Contact } from './components/Contact';
 
 import { TripPlannerModal } from './components/TripPlannerModal';
 import { ExperienceModal } from './components/ExperienceModal';
 import { DestinationModal } from './components/DestinationModal';
-import { ContactModal } from './components/ContactModal';
+
 import { LegalModal } from './components/LegalModal';
 
 import { Experience, Destination } from './types';
@@ -19,7 +20,7 @@ import { DESTINATIONS_DATA } from './data/parisData';
 export default function App() {
   // Modal states
   const [isTripPlannerOpen, setIsTripPlannerOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
+
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(null);
@@ -35,11 +36,7 @@ export default function App() {
   };
 
   const handleScrollTo = (id: string) => {
-    if (id === 'contact') {
-      setIsContactOpen(true);
-      return;
-    }
-
+    
     const el = document.getElementById(id);
 
     if (el) {
@@ -69,7 +66,7 @@ export default function App() {
       {/* Sticky Navigation */}
       <Navbar
         onOpenTripPlanner={() => handleOpenTripPlanner()}
-        onOpenContact={() => setIsContactOpen(true)}
+        onOpenContact={() => handleScrollTo('contact')}
       />
 
       {/* Main Content Sections */}
@@ -99,8 +96,10 @@ export default function App() {
         {/* 5. Plan Your Paris Adventure — Ready to Experience Paris? */}
         <FinalCTA
           onStartPlanning={() => handleOpenTripPlanner()}
-          onContactUs={() => setIsContactOpen(true)}
+          onContactUs={() => handleScrollTo('contact')}
         />
+        {/* 6. Contact Lumière Paris */}
+        <Contact />
       </main>
 
       {/* Interactive Modals */}
@@ -129,10 +128,6 @@ export default function App() {
         }}
       />
 
-      <ContactModal
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
-      />
 
       <LegalModal
         type={legalModalType}

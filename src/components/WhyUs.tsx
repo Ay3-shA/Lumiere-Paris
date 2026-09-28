@@ -37,7 +37,7 @@ export const WhyUs: React.FC = () => {
 
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F7F4EE] border border-[#EFEAE1] text-[#9E7D52] text-sm uppercase tracking-[0.18em] font-medium mb-5">
             <ShieldCheck className="w-4 h-4" />
-            <span>The Lumière Paris Promise</span>
+            <span>About Us</span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-bold text-white tracking-tight leading-tight mb-5">
