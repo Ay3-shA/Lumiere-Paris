@@ -49,10 +49,12 @@ export const Experiences: React.FC<ExperiencesProps> = ({
             Experiences You&apos;ll Love
           </h2>
 
-          <p className="font-sans text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto text-balance">
-            Discover Paris through experiences created for curious travelers,
-            first-time visitors, couples, families, and explorers.
-          </p>
+          <div className="w-150 mx-auto rounded-2xl bg-white/2 backdrop-blur-sm px-3 py-2">
+            <p className="font-sans text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto text-balance">
+              Discover Paris through experiences created for curious travelers,
+              first-time visitors, couples, families, and explorers.
+            </p>
+          </div>
 
           {/* Interactive Category Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-3 pt-9">

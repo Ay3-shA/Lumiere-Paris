@@ -44,11 +44,13 @@ export const WhyUs: React.FC = () => {
             Your Paris, Made Simple
           </h2>
 
-          <p className="font-sans text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto text-balance">
-            Planning a trip should be exciting, not stressful. We help you
-            experience Paris with carefully planned itineraries, memorable
-            activities, and local insight.
-          </p>
+          <div className="w-130 mx-auto rounded-2xl bg-black/2 backdrop-blur-sm px-3 py-2">
+            <p className="font-sans text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto text-balance">
+              Planning a trip should be exciting, not stressful. We help you
+              experience Paris with carefully planned itineraries, memorable
+              activities, and local insight.
+            </p>
+          </div>
         </div>
 
         {/* Feature Blocks */}

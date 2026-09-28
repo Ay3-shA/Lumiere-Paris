@@ -27,17 +27,21 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
         </h1>
 
         {/* Subheadline */}
-        <p className="font-serif italic text-lg sm:text-2xl lg:text-[26px] text-white font-normal tracking-wide max-w-3xl mb-4 text-balance">
-          &ldquo;Experience the timeless beauty, culture, cuisine, and unforgettable moments of Paris.&rdquo;
-        </p>
+        <div className="w-140 h-20 mx-auto rounded-2xl bg-white/3 backdrop-blur-sm px-3 py-2">
+          <p className="font-serif italic text-lg sm:text-2xl lg:text-[26px] text-white font-normal tracking-wide max-w-3xl mb-4 text-balance">
+            &ldquo;Experience the timeless beauty, culture, cuisine, and unforgettable moments of Paris.&rdquo;
+          </p>
+        </div>
 
         {/* Supporting text */}
-        <p className="font-sans text-sm sm:text-base lg:text-[17px] text-white/85 font-normal leading-relaxed max-w-2xl mb-10 text-balance">
-          From iconic landmarks and charming neighborhoods to authentic French cuisine and hidden local gems, we create memorable Paris experiences designed around the way you want to travel.
-        </p>
+        <div className="relative top-3 w-140 h-25 mx-auto rounded-2xl bg-black/3 backdrop-blur-sm px-3 py-2">
+          <p className="font-sans text-sm sm:text-base lg:text-[17px] text-white/85 font-normal leading-relaxed max-w-2xl mb-10 text-balance">
+            From iconic landmarks and charming neighborhoods to authentic French cuisine and hidden local gems, we create memorable Paris experiences designed around the way you want to travel.
+          </p>
+        </div>
 
         {/* Dual Call To Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto mb-14">
+        <div className="relative top-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto mb-14">
           <button
             onClick={onExploreClick}
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-paris-charcoal font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-paris-gold-light active:scale-95 transition-all duration-200 shadow-xl cursor-pointer flex items-center justify-center gap-2.5"

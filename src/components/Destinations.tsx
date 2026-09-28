@@ -31,18 +31,23 @@ export const Destinations: React.FC<DestinationsProps> = ({
             There&apos;s More to Paris Than the Eiffel Tower
           </h2>
 
-          <p className="font-sans text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-6 text-balance">
-            Paris is a city of neighborhoods, and every district has its own
-            personality and story.
-          </p>
+          <div className="w-110 h-20 mx-auto rounded-2xl bg-black/5 backdrop-blur-sm px-3 py-2">
+            <p className="font-sans text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-6 text-balance">
+              Paris is a city of neighborhoods, and every district has its own
+              personality and story.
+            </p>
+          </div>
 
-          <p className="font-sans text-base sm:text-lg text-white/80 leading-relaxed max-w-3xl mx-auto text-balance">
-            Walk through the artistic streets of Montmartre, explore the
-            historic heart of Île de la Cité, enjoy the cafés of
-            Saint-Germain-des-Prés, or take a relaxing stroll along the Seine.
-            From grand landmarks to hidden streets filled with character,
-            every corner offers something worth discovering.
-          </p>
+          <div className="relative top-5 w-170 mx-auto rounded-2xl bg-black/5 backdrop-blur-sm px-3 py-2">
+            <p className="font-sans text-base sm:text-lg text-white/90 leading-relaxed max-w-3xl mx-auto text-balance">
+              Walk through the artistic streets of Montmartre, explore the
+              historic heart of Île de la Cité, enjoy the cafés of
+              Saint-Germain-des-Prés, or take a relaxing stroll along the Seine.
+              From grand landmarks to hidden streets filled with character,
+              every corner offers something worth discovering.
+            </p>
+          </div>
+
         </div>
 
         {/* Destination Cards */}

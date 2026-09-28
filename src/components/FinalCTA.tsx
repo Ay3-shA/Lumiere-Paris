@@ -31,7 +31,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
 
         {/* Text */}
         <div className="relative w-fit mx-auto">
-          <div className="w-130 mx-auto rounded-2xl bg-black/5 backdrop-blur-md px-3 py-2">
+          <div className="w-130 mx-auto rounded-2xl bg-white/10 backdrop-blur-sm px-3 py-2">
           
             <p className="relative font-sans text-base sm:text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto text-balance">
               Your Paris adventure starts here. Choose your experiences, build your itinerary, and get ready to discover one of the world's most captivating cities.
