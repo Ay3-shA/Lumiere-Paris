@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
         </h1>
 
         {/* Subheadline */}
-        <p className="font-serif italic text-lg sm:text-2xl lg:text-[26px] text-paris-gold-light font-normal tracking-wide max-w-3xl mb-4 text-balance">
+        <p className="font-serif italic text-lg sm:text-2xl lg:text-[26px] text-white font-normal tracking-wide max-w-3xl mb-4 text-balance">
           &ldquo;Experience the timeless beauty, culture, cuisine, and unforgettable moments of Paris.&rdquo;
         </p>
 

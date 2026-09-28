@@ -1,6 +1,7 @@
 
+import { MapPin, Phone} from 'lucide-react';
 import React from 'react';
-import { Calendar, Mail, Sparkles, PhoneCall, ArrowRight } from 'lucide-react';
+import { Calendar, Mail, Sparkles} from 'lucide-react';
 
 interface FinalCTAProps {
   onStartPlanning: () => void;
@@ -29,9 +30,14 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
         </h2>
 
         {/* Text */}
-        <p className="font-sans text-base sm:text-lg lg:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto mb-10 text-balance">
-          Your Paris adventure starts here. Choose your experiences, build your itinerary, and get ready to discover one of the world's most captivating cities.
-        </p>
+        <div className="relative w-fit mx-auto">
+          <div className="w-175 mx-auto rounded-2xl bg-black/10 backdrop-blur-md px-3 py-2">
+          
+            <p className="relative font-sans text-base sm:text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto text-balance">
+              Your Paris adventure starts here. Choose your experiences, build your itinerary, and get ready to discover one of the world's most captivating cities.
+            </p>
+          </div>
+        </div>
 
         {/* Dual Call-to-Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto">
@@ -53,12 +59,16 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
         </div>
 
         {/* Direct Contact reassurance */}
-        <div className="mt-12 text-xs text-white/60 flex flex-wrap items-center justify-center gap-6">
-          <span>Parisian Concierge Office: Place Vendôme, 75001 Paris</span>
-          <span>•</span>
-          <span>Direct Phone: +33 (0)1 42 68 50 00</span>
-          <span>•</span>
-          <span>Avg. Response Time &lt; 2 Hours</span>
+        <div className="mt-12 relative top-3.5 text-sm sm:text-base text-white/90 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          <span className="flex items-center gap-2">
+            <MapPin className="w-4 h-4 text-white shrink-0" />
+            Parisian Concierge Office: Place Vendôme, 75001 Paris
+          </span>
+
+          <span className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-white shrink-0" />
+            Direct Phone: +33 (0)1 42 68 50 00
+          </span>
         </div>
 
       </div>
