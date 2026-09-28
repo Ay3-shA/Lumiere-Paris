@@ -31,7 +31,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
 
         {/* Text */}
         <div className="relative w-fit mx-auto">
-          <div className="w-175 mx-auto rounded-2xl bg-black/10 backdrop-blur-md px-3 py-2">
+          <div className="w-130 mx-auto rounded-2xl bg-black/5 backdrop-blur-md px-3 py-2">
           
             <p className="relative font-sans text-base sm:text-lg lg:text-xl text-white leading-relaxed max-w-2xl mx-auto text-balance">
               Your Paris adventure starts here. Choose your experiences, build your itinerary, and get ready to discover one of the world's most captivating cities.
@@ -40,7 +40,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
         </div>
 
         {/* Dual Call-to-Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto">
+        <div className="relative top-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto">
           <button
             onClick={onStartPlanning}
             className="w-full sm:w-auto px-9 py-4 rounded-full bg-white text-paris-charcoal font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-paris-gold-light active:scale-95 transition-all duration-200 shadow-2xl cursor-pointer flex items-center justify-center gap-2.5"
@@ -59,7 +59,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
         </div>
 
         {/* Direct Contact reassurance */}
-        <div className="mt-12 relative top-3.5 text-sm sm:text-base text-white/90 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+        <div className="mt-12 relative top-3.5 text-sm sm:text-base text-white/90 flex flex-wrap items-center justify-center gap-x-27 gap-y-4">
           <span className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-white shrink-0" />
             Parisian Concierge Office: Place Vendôme, 75001 Paris
