@@ -92,14 +92,16 @@ export default function App() {
 
         {/* 4. Why Travel With Us — Your Paris, Made Simple */}
         <WhyUs />
-
-        {/* 6. Contact Lumière Paris */}
-        <Contact onPlanTripClick={handleOpenTripPlanner} />
-
+        
         {/* 5. Plan Your Paris Adventure — Ready to Experience Paris? */}
         <FinalCTA
           onStartPlanning={() => handleOpenTripPlanner()}
           onContactUs={() => handleScrollTo('contact')}
+        />
+
+        {/* 6. Contact Lumière Paris */}
+        <Contact
+          onPlanTripClick={() => handleOpenTripPlanner()}
         />
 
       </main>
@@ -129,8 +131,7 @@ export default function App() {
           handleOpenTripPlanner(undefined, destId);
         }}
       />
-
-
+      
       <LegalModal
         type={legalModalType}
         onClose={() => setLegalModalType(null)}

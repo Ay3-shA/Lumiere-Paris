@@ -16,10 +16,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onPlanTripClick }) =
       {/* Main Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-20 text-center flex flex-col items-center">
         {/* Subtle Parisian Kicker */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-paris-gold-light text-xs uppercase tracking-[0.2em] font-medium mb-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <Sparkles className="w-3.5 h-3.5 text-paris-gold" />
-          <span>Home</span>
-        </div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paris-warm border border-paris-stone text-paris-gold-dark text-sm uppercase tracking-[0.18em] font-medium mb-5">
+            <Sparkles className="w-4 h-4" />
+            <span>HOME</span>
+          </div>
 
         {/* Headline */}
         <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-[80px] font-bold text-white tracking-tight leading-[1.08] mb-6 max-w-4xl text-balance">

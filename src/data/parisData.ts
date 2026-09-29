@@ -1,3 +1,5 @@
+import { Phone, Mail, MapPin, ArrowUpRight, Sparkles } from 'lucide-react';
+
 import { Experience, Destination } from '../types';
 
 import heroEiffel from '../assets/images/paris_hero_eiffel_1790325777186.jpg';
@@ -270,5 +272,38 @@ export const WHY_US_FEATURES = [
     description: "From iconic sights to unexpected discoveries, create memories you'll take home with you.",
     details: "A private sunrise boat on the Seine, a quiet toast overlooking the sparkling Eiffel Tower, or sharing laughs with a Montmartre artist—moments you'll cherish forever.",
     stat: '4.9/5 Guest Satisfaction',
+  },
+];
+
+export const CONTACT_CARDS = [
+  {
+    id: 'telephone',
+    title: 'Direct Line',
+    description:
+      'Speak directly with our Paris concierge team for personal travel assistance and immediate guidance.',
+    details: 'Toll-Free: +1 (800) 849-PARIS',
+    stat: '+33 (0)1 42 68 50 00',
+    href: 'tel:+33142685000',
+    icon: Phone,
+  },
+  {
+    id: 'email',
+    title: 'Direct Email',
+    description:
+      'Send us your Paris travel questions, preferences, or itinerary requests and our team will respond personally.',
+    details: 'Response under 2 hours',
+    stat: 'concierge@lumiereparis.com',
+    href: 'mailto:concierge@lumiereparis.com?subject=Curated%20Parisian%20Journey%20Inquiry',
+    icon: Mail,
+  },
+  {
+    id: 'salon',
+    title: 'Private Salon',
+    description:
+      'Visit our Paris concierge office at Place Vendôme for a private conversation about your journey.',
+    details: '75001 Paris, France',
+    stat: '14 Place Vendôme',
+    href: 'https://maps.google.com/?q=14+Place+Vendome+75001+Paris+France',
+    icon: MapPin,
   },
 ];
