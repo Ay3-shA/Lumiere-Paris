@@ -31,6 +31,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [formError, setFormError] = useState('');
 
   if (!isOpen) return null;
 
@@ -54,6 +55,18 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!fullName.trim()) {
+      setFormError('Please enter your full name.');
+      return;
+    }
+
+    if (!email.trim()) {
+      setFormError('Please enter your email address.');
+      return;
+    }
+
+    setFormError('');
     setSubmitted(true);
   };
 
@@ -294,7 +307,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
 
             {/* Step 3: Traveler Info & Final Submit */}
             {step === 3 && (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} noValidate className="space-y-4">
                 <div className="p-4 rounded-2xl bg-[#F0F4F8] border border-[#D5E1EA] text-xs text-[#1A1A1A] space-y-1">
                   <div className="font-bold text-[#4A6B82] uppercase tracking-wider">Itinerary Summary:</div>
                   <div>Duration: <strong>{duration}</strong></div>
@@ -308,7 +321,6 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                   </label>
                   <input
                     type="text"
-                    required
                     placeholder="e.g. Charlotte & James Sinclair"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
@@ -322,13 +334,18 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                   </label>
                   <input
                     type="email"
-                    required
                     placeholder="e.g. charlotte@sinclair.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full bg-[#F7F4EE] border border-[#EFEAE1] rounded-xl py-2.5 px-3.5 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
+
+                {formError && (
+                  <div className="rounded-xl bg-[#F7F4EE] border border-[#C5A880]/50 px-4 py-3 text-sm text-[#9E7D52]">
+                    {formError}
+                  </div>
+                )}
 
                 <div>
                   <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-1">
