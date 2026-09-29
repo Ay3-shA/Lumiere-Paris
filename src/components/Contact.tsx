@@ -7,23 +7,23 @@ interface ContactProps {
 }
 
 export const Contact: React.FC<ContactProps> = () => {
-  const [parisTime, setParisTime] = useState<string>('');
+  // const [parisTime, setParisTime] = useState<string>('');
 
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone: 'Europe/Paris',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      };
-      setParisTime(new Intl.DateTimeFormat('fr-FR', options).format(now));
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 30000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const updateTime = () => {
+  //     const now = new Date();
+  //     const options: Intl.DateTimeFormatOptions = {
+  //       timeZone: 'Europe/Paris',
+  //       hour: '2-digit',
+  //       minute: '2-digit',
+  //       hour12: false,
+  //     };
+  //     setParisTime(new Intl.DateTimeFormat('fr-FR', options).format(now));
+  //   };
+  //   updateTime();
+  //   const interval = setInterval(updateTime, 30000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <section
@@ -54,15 +54,15 @@ export const Contact: React.FC<ContactProps> = () => {
         </div>
 
         {/* Live Paris Status Pill */}
-        <div className="relative top-13 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-xs text-white/90 mb-12">
+        {/* <div className="relative top-13 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-xs text-white/90 mb-12">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="font-semibold">{parisTime ? `${parisTime} CET` : 'Paris Time'}</span>
           <span className="text-white/30">•</span>
           <span className="text-[#E8D8C3]">Atelier Desks Active</span>
-        </div>
+        </div> */}
 
         {/* Contact Cards */}
-        <div className="relative top-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="relative top-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {CONTACT_CARDS.map((card) => (
             <a
               key={card.id}
