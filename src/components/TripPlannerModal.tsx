@@ -105,7 +105,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
             <div className="mb-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#F7F4EE] border border-[#EFEAE1] text-[#9E7D52] text-[11px] uppercase tracking-widest font-semibold mb-2">
                 <Sparkles className="w-3 h-3" />
-                <span>Bespoke Itinerary Studio</span>
+                <span>Plan Your Trip</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#1A1A1A]">
                 Design Your Paris Journey
