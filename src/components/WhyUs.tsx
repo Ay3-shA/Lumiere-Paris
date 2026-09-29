@@ -12,16 +12,16 @@ import { WHY_US_FEATURES } from '../data/parisData';
 export const WhyUs: React.FC = () => {
   const iconMap: Record<string, React.ReactNode> = {
     'local-expertise': (
-      <Compass className="w-7 h-7 text-[#9E7D52]" />
+      <Compass className="w-7 h-7 text-paris-gold-dark" />
     ),
     'tailored-experiences': (
-      <Sparkles className="w-7 h-7 text-[#9E7D52]" />
+      <Sparkles className="w-7 h-7 text-paris-gold-dark" />
     ),
     'easy-planning': (
-      <CalendarCheck className="w-7 h-7 text-[#9E7D52]" />
+      <CalendarCheck className="w-7 h-7 text-paris-gold-dark" />
     ),
     'memorable-moments': (
-      <HeartHandshake className="w-7 h-7 text-[#9E7D52]" />
+      <HeartHandshake className="w-7 h-7 text-paris-gold-dark" />
     ),
   };
 
@@ -35,7 +35,7 @@ export const WhyUs: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F7F4EE] border border-[#EFEAE1] text-[#9E7D52] text-sm uppercase tracking-[0.18em] font-medium mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paris-warm border border-paris-stone text-paris-gold-dark text-sm uppercase tracking-[0.18em] font-medium mb-5">
             <ShieldCheck className="w-4 h-4" />
             <span>About Us</span>
           </div>
@@ -58,32 +58,32 @@ export const WhyUs: React.FC = () => {
           {WHY_US_FEATURES.map((feature) => (
             <div
               key={feature.id}
-              className="group p-8 rounded-3xl bg-[#F7F4EE] border border-[#EFEAE1] hover:border-[#C5A880]/50 hover:bg-[#FDFBF7] transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1.5 flex flex-col justify-between"
+              className="group p-8 rounded-3xl bg-paris-warm border border-paris-stone hover:border-paris-gold/50 hover:bg-paris-cream transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1.5 flex flex-col justify-between"
             >
 
               <div>
 
                 {/* Icon Container */}
-                <div className="w-16 h-16 rounded-2xl bg-white border border-[#EFEAE1] flex items-center justify-center mb-7 shadow-xs group-hover:scale-110 group-hover:border-[#C5A880]/40 transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-white border border-paris-stone flex items-center justify-center mb-7 shadow-xs group-hover:scale-110 group-hover:border-paris-gold/40 transition-all duration-300">
                   {iconMap[feature.id]}
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-[27px] font-bold text-[#1A1A1A] mb-4 tracking-tight group-hover:text-[#9E7D52] transition-colors">
+                <h3 className="font-serif text-2xl sm:text-[27px] font-bold text-paris-charcoal mb-4 tracking-tight group-hover:text-paris-gold-dark transition-colors">
                   {feature.title}
                 </h3>
 
-                <p className="font-sans text-base text-[#1A1A1A]/75 leading-relaxed mb-5">
+                <p className="font-sans text-base text-paris-charcoal/75 leading-relaxed mb-5">
                   {feature.description}
                 </p>
 
-                <p className="font-sans text-sm text-[#1A1A1A]/60 leading-relaxed pt-4 border-t border-[#EFEAE1]">
+                <p className="font-sans text-sm text-paris-charcoal/60 leading-relaxed pt-4 border-t border-paris-stone">
                   {feature.details}
                 </p>
               </div>
 
               {/* Stat Pill */}
               <div className="pt-7 mt-5">
-                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#9E7D52] bg-[#F0EAE1]/70 px-3.5 py-1.5 rounded-full">
+                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-paris-gold-dark bg-[#F0EAE1]/70 px-3.5 py-1.5 rounded-full">
                   {feature.stat}
                 </span>
               </div>
@@ -97,7 +97,7 @@ export const WhyUs: React.FC = () => {
         </h2>
 
         {/* Guest Voices */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#1A1A1A] text-white relative overflow-hidden">
+        <div className="p-8 sm:p-12 rounded-3xl bg-paris-charcoal text-white relative overflow-hidden">
 
           <div className="absolute top-0 right-0 p-8 text-white/5 pointer-events-none">
             <Quote className="w-36 h-36" />
@@ -106,7 +106,7 @@ export const WhyUs: React.FC = () => {
           <div className="relative z-10 grid md:grid-cols-3 gap-8">
 
             <div className="space-y-3">
-              <div className="flex text-[#C5A880] text-base">
+              <div className="flex text-paris-gold text-base">
                 ★★★★★
               </div>
 
@@ -122,7 +122,7 @@ export const WhyUs: React.FC = () => {
             </div>
 
             <div className="space-y-3">
-              <div className="flex text-[#C5A880] text-base">
+              <div className="flex text-paris-gold text-base">
                 ★★★★★
               </div>
 
@@ -138,7 +138,7 @@ export const WhyUs: React.FC = () => {
             </div>
 
             <div className="space-y-3">
-              <div className="flex text-[#C5A880] text-base">
+              <div className="flex text-paris-gold text-base">
                 ★★★★★
               </div>
 

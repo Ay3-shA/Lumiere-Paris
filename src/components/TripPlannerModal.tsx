@@ -89,12 +89,12 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-[#FDFBF7] rounded-3xl p-6 sm:p-10 text-[#1A1A1A] shadow-2xl border border-[#EFEAE1] max-h-[90vh] overflow-y-auto font-sans">
+      <div className="relative w-full max-w-2xl bg-paris-cream rounded-3xl p-6 sm:p-10 text-paris-charcoal shadow-2xl border border-paris-stone max-h-[90vh] overflow-y-auto font-sans">
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close trip planner"
-          className="absolute top-5 right-5 p-2 rounded-full text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-[#EFEAE1] transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full text-paris-charcoal/60 hover:text-paris-charcoal hover:bg-paris-stone transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -103,32 +103,32 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
           <div>
             {/* Header */}
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#F7F4EE] border border-[#EFEAE1] text-[#9E7D52] text-[11px] uppercase tracking-widest font-semibold mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-paris-warm border border-paris-stone text-paris-gold-dark text-[11px] uppercase tracking-widest font-semibold mb-2">
                 <Sparkles className="w-3 h-3" />
                 <span>Plan Your Trip</span>
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#1A1A1A]">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-paris-charcoal">
                 Design Your Paris Journey
               </h3>
-              <p className="text-xs sm:text-sm text-[#1A1A1A]/70 mt-1">
+              <p className="text-xs sm:text-sm text-paris-charcoal/70 mt-1">
                 Tell us your travel desires, and our Parisian concierges will curate a custom daily itinerary.
               </p>
             </div>
 
             {/* Stepper indicators */}
-            <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#EFEAE1]">
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-paris-stone">
               <div className="flex items-center gap-2">
-                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${step >= 1 ? 'bg-[#1A1A1A] text-white' : 'bg-[#EFEAE1] text-[#1A1A1A]/60'}`}>1</span>
+                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${step >= 1 ? 'bg-paris-charcoal text-white' : 'bg-paris-stone text-paris-charcoal/60'}`}>1</span>
                 <span className="text-xs font-medium hidden sm:inline">Preferences</span>
               </div>
-              <div className="h-0.5 w-8 bg-[#EFEAE1]" />
+              <div className="h-0.5 w-8 bg-paris-stone" />
               <div className="flex items-center gap-2">
-                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${step >= 2 ? 'bg-[#1A1A1A] text-white' : 'bg-[#EFEAE1] text-[#1A1A1A]/60'}`}>2</span>
+                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${step >= 2 ? 'bg-paris-charcoal text-white' : 'bg-paris-stone text-paris-charcoal/60'}`}>2</span>
                 <span className="text-xs font-medium hidden sm:inline">Experiences & Quartiers</span>
               </div>
-              <div className="h-0.5 w-8 bg-[#EFEAE1]" />
+              <div className="h-0.5 w-8 bg-paris-stone" />
               <div className="flex items-center gap-2">
-                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${step >= 3 ? 'bg-[#1A1A1A] text-white' : 'bg-[#EFEAE1] text-[#1A1A1A]/60'}`}>3</span>
+                <span className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${step >= 3 ? 'bg-paris-charcoal text-white' : 'bg-paris-stone text-paris-charcoal/60'}`}>3</span>
                 <span className="text-xs font-medium hidden sm:inline">Concierge Review</span>
               </div>
             </div>
@@ -138,28 +138,28 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
               <div className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-2">
+                    <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-2">
                       Estimated Travel Date
                     </label>
                     <div className="relative">
-                      <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#1A1A1A]/40" />
+                      <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-paris-charcoal/40" />
                       <input
                         type="date"
                         value={travelDates}
                         onChange={(e) => setTravelDates(e.target.value)}
-                        className="w-full bg-[#F7F4EE] border border-[#EFEAE1] rounded-xl py-2.5 pl-10 pr-3 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#C5A880]"
+                        className="w-full bg-paris-warm border border-paris-stone rounded-xl py-2.5 pl-10 pr-3 text-sm text-paris-charcoal focus:outline-none focus:border-paris-gold"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-2">
+                    <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-2">
                       Trip Duration
                     </label>
                     <select
                       value={duration}
                       onChange={(e) => setDuration(e.target.value)}
-                      className="w-full bg-[#F7F4EE] border border-[#EFEAE1] rounded-xl py-2.5 px-3.5 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#C5A880]"
+                      className="w-full bg-paris-warm border border-paris-stone rounded-xl py-2.5 px-3.5 text-sm text-paris-charcoal focus:outline-none focus:border-paris-gold"
                     >
                       <option value="2-3 Days">2–3 Days (Weekend Getaway)</option>
                       <option value="4-5 Days">4–5 Days (Classic Paris)</option>
@@ -170,13 +170,13 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-2">
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-2">
                     Party / Travelers
                   </label>
                   <select
                     value={partySize}
                     onChange={(e) => setPartySize(e.target.value)}
-                    className="w-full bg-[#F7F4EE] border border-[#EFEAE1] rounded-xl py-2.5 px-3.5 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-paris-warm border border-paris-stone rounded-xl py-2.5 px-3.5 text-sm text-paris-charcoal focus:outline-none focus:border-paris-gold"
                   >
                     <option value="Solo Traveler">Solo Traveler</option>
                     <option value="Couple (2 Adults)">Couple / Romantic (2 Guests)</option>
@@ -187,7 +187,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-2">
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-2">
                     What Inspires You? (Select multiple)
                   </label>
                   <div className="grid grid-cols-2 gap-2">
@@ -198,8 +198,8 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                         onClick={() => toggleStyle(style)}
                         className={`p-2.5 rounded-xl border text-left text-xs font-medium transition-all ${
                           travelStyle.includes(style)
-                            ? 'bg-[#1A1A1A] text-white border-[#1A1A1A] shadow-xs'
-                            : 'bg-[#F7F4EE] text-[#1A1A1A]/80 border-[#EFEAE1] hover:border-[#C5A880]/50'
+                            ? 'bg-paris-charcoal text-white border-paris-charcoal shadow-xs'
+                            : 'bg-paris-warm text-paris-charcoal/80 border-paris-stone hover:border-paris-gold/50'
                         }`}
                       >
                         {style}
@@ -211,7 +211,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                 <div className="pt-4 flex justify-end">
                   <button
                     onClick={() => setStep(2)}
-                    className="px-6 py-3 rounded-full bg-[#1A1A1A] text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#C5A880] hover:text-[#1A1A1A] transition-colors flex items-center gap-2 cursor-pointer"
+                    className="px-6 py-3 rounded-full bg-paris-charcoal text-white font-semibold text-xs uppercase tracking-wider hover:bg-paris-gold hover:text-paris-charcoal transition-colors flex items-center gap-2 cursor-pointer"
                   >
                     <span>Next: Choose Highlights</span>
                     <ArrowRight className="w-4 h-4" />
@@ -224,7 +224,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
             {step === 2 && (
               <div className="space-y-6">
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-2">
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-2">
                     Select Preferred Experiences
                   </label>
                   <div className="space-y-2">
@@ -234,8 +234,8 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                         onClick={() => toggleExperience(exp.id)}
                         className={`p-3 rounded-2xl border flex items-center justify-between cursor-pointer transition-all ${
                           selectedExperiences.includes(exp.id)
-                            ? 'bg-[#1A1A1A] text-white border-[#1A1A1A]'
-                            : 'bg-[#F7F4EE] text-[#1A1A1A] border-[#EFEAE1] hover:border-[#C5A880]'
+                            ? 'bg-paris-charcoal text-white border-paris-charcoal'
+                            : 'bg-paris-warm text-paris-charcoal border-paris-stone hover:border-paris-gold'
                         }`}
                       >
                         <div className="flex items-center gap-3">
@@ -246,7 +246,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                           />
                           <div>
                             <div className="text-sm font-bold">{exp.title}</div>
-                            <div className={`text-xs ${selectedExperiences.includes(exp.id) ? 'text-white/70' : 'text-[#1A1A1A]/60'}`}>
+                            <div className={`text-xs ${selectedExperiences.includes(exp.id) ? 'text-white/70' : 'text-paris-charcoal/60'}`}>
                               {exp.duration} · {exp.category}
                             </div>
                           </div>
@@ -255,7 +255,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                           type="checkbox"
                           checked={selectedExperiences.includes(exp.id)}
                           onChange={() => {}}
-                          className="w-4 h-4 rounded text-[#C5A880]"
+                          className="w-4 h-4 rounded text-paris-gold"
                         />
                       </div>
                     ))}
@@ -263,7 +263,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-2">
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-2">
                     Which Neighborhoods Draw Your Curiosity?
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -274,12 +274,12 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                         onClick={() => toggleNeighborhood(dest.id)}
                         className={`p-2.5 rounded-xl border text-xs font-semibold text-left transition-all ${
                           selectedNeighborhoods.includes(dest.id)
-                            ? 'bg-[#1A1A1A] text-white border-[#1A1A1A]'
-                            : 'bg-[#F7F4EE] text-[#1A1A1A] border-[#EFEAE1] hover:border-[#C5A880]'
+                            ? 'bg-paris-charcoal text-white border-paris-charcoal'
+                            : 'bg-paris-warm text-paris-charcoal border-paris-stone hover:border-paris-gold'
                         }`}
                       >
                         <div>{dest.name}</div>
-                        <div className={`text-[10px] ${selectedNeighborhoods.includes(dest.id) ? 'text-white/70' : 'text-[#1A1A1A]/50'}`}>
+                        <div className={`text-[10px] ${selectedNeighborhoods.includes(dest.id) ? 'text-white/70' : 'text-paris-charcoal/50'}`}>
                           {dest.arrondissement}
                         </div>
                       </button>
@@ -290,13 +290,13 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                 <div className="pt-4 flex items-center justify-between">
                   <button
                     onClick={() => setStep(1)}
-                    className="text-xs font-semibold uppercase tracking-wider text-[#1A1A1A]/70 hover:text-[#1A1A1A]"
+                    className="text-xs font-semibold uppercase tracking-wider text-paris-charcoal/70 hover:text-paris-charcoal"
                   >
                     Back
                   </button>
                   <button
                     onClick={() => setStep(3)}
-                    className="px-6 py-3 rounded-full bg-[#1A1A1A] text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#C5A880] hover:text-[#1A1A1A] transition-colors flex items-center gap-2 cursor-pointer"
+                    className="px-6 py-3 rounded-full bg-paris-charcoal text-white font-semibold text-xs uppercase tracking-wider hover:bg-paris-gold hover:text-paris-charcoal transition-colors flex items-center gap-2 cursor-pointer"
                   >
                     <span>Next: Concierge Details</span>
                     <ArrowRight className="w-4 h-4" />
@@ -308,15 +308,15 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
             {/* Step 3: Traveler Info & Final Submit */}
             {step === 3 && (
               <form onSubmit={handleSubmit} noValidate className="space-y-4">
-                <div className="p-4 rounded-2xl bg-[#F0F4F8] border border-[#D5E1EA] text-xs text-[#1A1A1A] space-y-1">
-                  <div className="font-bold text-[#4A6B82] uppercase tracking-wider">Itinerary Summary:</div>
+                <div className="p-4 rounded-2xl bg-paris-blue-light border border-[#D5E1EA] text-xs text-paris-charcoal space-y-1">
+                  <div className="font-bold text-paris-blue uppercase tracking-wider">Itinerary Summary:</div>
                   <div>Duration: <strong>{duration}</strong></div>
                   <div>Selected Experiences: <strong>{selectedExperiences.length} chosen</strong></div>
                   <div>Quartiers of Interest: <strong>{selectedNeighborhoods.length} neighborhoods</strong></div>
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-1">
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-1">
                     Your Full Name *
                   </label>
                   <input
@@ -324,12 +324,12 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                     placeholder="e.g. Charlotte & James Sinclair"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full bg-[#F7F4EE] border border-[#EFEAE1] rounded-xl py-2.5 px-3.5 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-paris-warm border border-paris-stone rounded-xl py-2.5 px-3.5 text-sm text-paris-charcoal focus:outline-none focus:border-paris-gold"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-1">
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-1">
                     Email Address *
                   </label>
                   <input
@@ -337,18 +337,18 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                     placeholder="e.g. charlotte@sinclair.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#F7F4EE] border border-[#EFEAE1] rounded-xl py-2.5 px-3.5 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-paris-warm border border-paris-stone rounded-xl py-2.5 px-3.5 text-sm text-paris-charcoal focus:outline-none focus:border-paris-gold"
                   />
                 </div>
 
                 {formError && (
-                  <div className="rounded-xl bg-[#F7F4EE] border border-[#C5A880]/50 px-4 py-3 text-sm text-[#9E7D52]">
+                  <div className="rounded-xl bg-paris-warm border border-paris-gold/50 px-4 py-3 text-sm text-paris-gold-dark">
                     {formError}
                   </div>
                 )}
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-[#1A1A1A]/80 mb-1">
+                  <label className="block text-xs uppercase tracking-wider font-semibold text-paris-charcoal/80 mb-1">
                     Special Wishes or Requirements (Optional)
                   </label>
                   <textarea
@@ -356,7 +356,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                     placeholder="Dietary preferences, special anniversary surprise, mobility considerations, favorite wine regions..."
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="w-full bg-[#F7F4EE] border border-[#EFEAE1] rounded-xl py-2 px-3 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-paris-warm border border-paris-stone rounded-xl py-2 px-3 text-sm text-paris-charcoal focus:outline-none focus:border-paris-gold"
                   />
                 </div>
 
@@ -364,15 +364,15 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="text-xs font-semibold uppercase tracking-wider text-[#1A1A1A]/70 hover:text-[#1A1A1A]"
+                    className="text-xs font-semibold uppercase tracking-wider text-paris-charcoal/70 hover:text-paris-charcoal"
                   >
                     Back
                   </button>
                   <button
                     type="submit"
-                    className="px-8 py-3.5 rounded-full bg-[#1A1A1A] text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#C5A880] hover:text-[#1A1A1A] transition-colors flex items-center gap-2 cursor-pointer shadow-md"
+                    className="px-8 py-3.5 rounded-full bg-paris-charcoal text-white font-semibold text-xs uppercase tracking-wider hover:bg-paris-gold hover:text-paris-charcoal transition-colors flex items-center gap-2 cursor-pointer shadow-md"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-[#C5A880]" />
+                    <CheckCircle2 className="w-4 h-4 text-paris-gold" />
                     <span>Submit Itinerary Request</span>
                   </button>
                 </div>
@@ -381,19 +381,19 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
           </div>
         ) : (
           <div className="py-8 text-center space-y-4">
-            <div className="w-16 h-16 mx-auto rounded-full bg-[#F0EAE1] flex items-center justify-center text-[#9E7D52]">
+            <div className="w-16 h-16 mx-auto rounded-full bg-[#F0EAE1] flex items-center justify-center text-paris-gold-dark">
               <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h3 className="font-serif text-3xl font-bold text-[#1A1A1A]">
+            <h3 className="font-serif text-3xl font-bold text-paris-charcoal">
               Merci Beaucoup, {fullName || 'Traveler'}!
             </h3>
-            <p className="text-sm text-[#1A1A1A]/80 max-w-md mx-auto leading-relaxed">
-              We have received your custom Paris journey request for <span className="font-semibold text-[#1A1A1A]">{duration}</span>. Our Parisian travel designer will review your selected experiences and email your tailored itinerary proposal to <span className="font-semibold text-[#1A1A1A]">{email}</span> within 24 hours.
+            <p className="text-sm text-paris-charcoal/80 max-w-md mx-auto leading-relaxed">
+              We have received your custom Paris journey request for <span className="font-semibold text-paris-charcoal">{duration}</span>. Our Parisian travel designer will review your selected experiences and email your tailored itinerary proposal to <span className="font-semibold text-paris-charcoal">{email}</span> within 24 hours.
             </p>
             <div className="pt-4">
               <button
                 onClick={handleReset}
-                className="px-8 py-3 rounded-full bg-[#1A1A1A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#C5A880] transition-colors"
+                className="px-8 py-3 rounded-full bg-paris-charcoal text-white text-xs font-semibold uppercase tracking-wider hover:bg-paris-gold transition-colors"
               >
                 Return to Website
               </button>
