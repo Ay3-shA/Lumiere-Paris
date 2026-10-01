@@ -183,6 +183,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
               }`}
             >
               Contact
+              {activeSection === 'contact' && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-paris-gold rounded-full" />
+              )}
             </button>
           </nav>
 
