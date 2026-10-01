@@ -174,7 +174,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTripPlanner, onOpenContact
               }}
               className={`text-sm font-bold uppercase tracking-[0.14em] transition-colors relative py-1 cursor-pointer ${
                 isScrolled
-                  ? 'text-paris-charcoal/80 hover:text-paris-charcoal'
+                  ? activeSection === 'contact'
+                    ? 'text-paris-gold font-semibold'
+                    : 'text-paris-charcoal/80 hover:text-paris-charcoal'
+                  : activeSection === 'contact'
+                  ? 'text-paris-gold-light font-semibold'
                   : 'text-white/90 hover:text-white'
               }`}
             >
